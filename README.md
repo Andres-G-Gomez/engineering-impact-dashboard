@@ -14,13 +14,13 @@ A reviewer's **Review Influence Score** is the sum of points earned across every
 points = PR Complexity × Subsystem Criticality × (1 + Review Depth) × Acceptance Weight × Sample Weight
 ```
 
-| Signal | Range | How it's computed |
-|---|---|---|
-| **PR Complexity** | 1–5 | Files changed + line delta from PR metadata (no extra API call) |
-| **Subsystem Criticality** | 1–3 | Highest-weight path prefix in the first 30 changed files. `plugin-server`, `hogql` → 3; `posthog/api`, `posthog/models` → 2; everything else → 1 |
-| **Review Depth** | bonus 0–2.5 | +1.0 for review body > 30 words · +1.5 for `CHANGES_REQUESTED` · +0.5 for `APPROVED` |
-| **Acceptance Weight** | 1.0× or 1.5× | 1.5 if any reviewer requested changes (proxy that the author revised the code before merge) |
-| **Sample Weight** | 1.0× or 4.0× | Inverse-probability correction for stratified sampling (see below) |
+| Signal                    | Range        | How it's computed                                                                                                                                |
+| ------------------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **PR Complexity**         | 1–5          | Files changed + line delta from PR metadata (no extra API call)                                                                                  |
+| **Subsystem Criticality** | 1–3          | Highest-weight path prefix in the first 30 changed files. `plugin-server`, `hogql` → 3; `posthog/api`, `posthog/models` → 2; everything else → 1 |
+| **Review Depth**          | bonus 0–2.5  | +1.0 for review body > 30 words · +1.5 for `CHANGES_REQUESTED` · +0.5 for `APPROVED`                                                             |
+| **Acceptance Weight**     | 1.0× or 1.5× | 1.5 if any reviewer requested changes (proxy that the author revised the code before merge)                                                      |
+| **Sample Weight**         | 1.0× or 4.0× | Inverse-probability correction for stratified sampling (see below)                                                                               |
 
 **Network Reach** (unique authors helped, subsystems covered) is tracked as a supplementary stat shown in the leaderboard but not folded into the score.
 
@@ -59,10 +59,10 @@ This yields roughly **3 API calls per PR** (search page amortised + `as_pull_req
 
 PRs are split into two strata using only the free metadata fields:
 
-| Stratum | Condition | Sample rate | Sample Weight |
-|---|---|---|---|
-| Large | ≥ 10 files changed **or** ≥ 400 net lines | 100% | 1.0 |
-| Small | below both thresholds | 25% (random) | 4.0 |
+| Stratum | Condition                                 | Sample rate  | Sample Weight |
+| ------- | ----------------------------------------- | ------------ | ------------- |
+| Large   | ≥ 10 files changed **or** ≥ 400 net lines | 100%         | 1.0           |
+| Small   | below both thresholds                     | 25% (random) | 4.0           |
 
 Each sampled small PR is scored with a ×4 inverse-probability weight so cumulative scores remain statistically unbiased estimates of what a full scan would produce.
 
@@ -70,13 +70,13 @@ Each sampled small PR is scored with a ×4 inverse-probability weight so cumulat
 
 ## Dashboard tabs
 
-| Tab | Visualisation |
-|---|---|
-| **Overview** | Metric cards, scoring formula with variable definitions, stratified sampling explanation |
-| **Reviewer Leaderboard** | Ranked table with score bar, PRs reviewed, unique authors, subsystems covered |
-| **Review Network** | D3 force-directed graph — node size = influence score, edge weight = review frequency; draggable |
-| **Influence Trend** | Chart.js line chart of total influence points per ISO week |
-| **Subsystem Coverage** | Chart.js bar chart of review density by codebase area |
+| Tab                      | Visualisation                                                                                    |
+| ------------------------ | ------------------------------------------------------------------------------------------------ |
+| **Overview**             | Metric cards, scoring formula with variable definitions, stratified sampling explanation         |
+| **Reviewer Leaderboard** | Ranked table with score bar, PRs reviewed, unique authors, subsystems covered                    |
+| **Review Network**       | D3 force-directed graph — node size = influence score, edge weight = review frequency; draggable |
+| **Influence Trend**      | Chart.js line chart of total influence points per ISO week                                       |
+| **Subsystem Coverage**   | Chart.js bar chart of review density by codebase area                                            |
 
 ---
 
@@ -96,8 +96,8 @@ pip install -r requirements.txt
 ### Configure
 
 ```bash
-cp .env.example .env
-# Edit .env and set GITHUB_TOKEN=ghp_...
+touch .env
+# Open .env and add: GITHUB_TOKEN=ghp_your_token_here
 ```
 
 ### Run the scraper
@@ -120,10 +120,9 @@ Open [http://localhost:5000](http://localhost:5000).
 
 ## Deployment on Render
 
-1. Push the repository to GitHub (ensure `data.json` is committed — it is gitignored by default, so add it explicitly or generate it in a build step).
+1. Push the repository to GitHub (ensure `data.json` is committed).
 2. Create a new **Web Service** on [Render](https://render.com) pointing at the repo.
-3. Set the `GITHUB_TOKEN` environment variable in the Render dashboard.
-4. Render will automatically use the `Procfile`:
+3. Render will automatically use the `Procfile`:
    ```
    web: gunicorn app:app
    ```
@@ -141,7 +140,7 @@ engineering-impact-dashboard/
 ├── data.json           # Generated by scraper (gitignored)
 ├── requirements.txt
 ├── Procfile            # Render deployment
-└── .env.example        # Token configuration template
+└── .env                # Token configuration
 ```
 
 ---
