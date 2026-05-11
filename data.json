@@ -1,0 +1,3383 @@
+{
+  "generated_at": "2026-05-11T17:25:53.437700+00:00",
+  "repo": "PostHog/posthog",
+  "days_back": 90,
+  "leaderboard": [
+    {
+      "login": "greptile-apps[bot]",
+      "score": 1632.5,
+      "prs_reviewed": 324,
+      "authors_reviewed": 84,
+      "subsystems": 3,
+      "avatar_url": "https://github.com/greptile-apps[bot].png?size=40"
+    },
+    {
+      "login": "github-actions[bot]",
+      "score": 1178.5,
+      "prs_reviewed": 98,
+      "authors_reviewed": 26,
+      "subsystems": 2,
+      "avatar_url": "https://github.com/github-actions[bot].png?size=40"
+    },
+    {
+      "login": "graphite-app[bot]",
+      "score": 626.0,
+      "prs_reviewed": 89,
+      "authors_reviewed": 40,
+      "subsystems": 3,
+      "avatar_url": "https://github.com/graphite-app[bot].png?size=40"
+    },
+    {
+      "login": "copilot-pull-request-reviewer[bot]",
+      "score": 551.0,
+      "prs_reviewed": 62,
+      "authors_reviewed": 15,
+      "subsystems": 3,
+      "avatar_url": "https://github.com/copilot-pull-request-reviewer[bot].png?size=40"
+    },
+    {
+      "login": "stamphog[bot]",
+      "score": 532.0,
+      "prs_reviewed": 65,
+      "authors_reviewed": 24,
+      "subsystems": 2,
+      "avatar_url": "https://github.com/stamphog[bot].png?size=40"
+    },
+    {
+      "login": "chatgpt-codex-connector[bot]",
+      "score": 411.0,
+      "prs_reviewed": 44,
+      "authors_reviewed": 6,
+      "subsystems": 2,
+      "avatar_url": "https://github.com/chatgpt-codex-connector[bot].png?size=40"
+    },
+    {
+      "login": "pauldambra",
+      "score": 390.5,
+      "prs_reviewed": 16,
+      "authors_reviewed": 7,
+      "subsystems": 3,
+      "avatar_url": "https://github.com/pauldambra.png?size=40"
+    },
+    {
+      "login": "Radu-Raicea",
+      "score": 284.0,
+      "prs_reviewed": 9,
+      "authors_reviewed": 4,
+      "subsystems": 2,
+      "avatar_url": "https://github.com/Radu-Raicea.png?size=40"
+    },
+    {
+      "login": "haacked",
+      "score": 265.5,
+      "prs_reviewed": 11,
+      "authors_reviewed": 6,
+      "subsystems": 3,
+      "avatar_url": "https://github.com/haacked.png?size=40"
+    },
+    {
+      "login": "richardsolomou",
+      "score": 243.5,
+      "prs_reviewed": 11,
+      "authors_reviewed": 6,
+      "subsystems": 2,
+      "avatar_url": "https://github.com/richardsolomou.png?size=40"
+    },
+    {
+      "login": "hex-security-app[bot]",
+      "score": 159.5,
+      "prs_reviewed": 25,
+      "authors_reviewed": 20,
+      "subsystems": 2,
+      "avatar_url": "https://github.com/hex-security-app[bot].png?size=40"
+    },
+    {
+      "login": "rnegron",
+      "score": 139.0,
+      "prs_reviewed": 16,
+      "authors_reviewed": 4,
+      "subsystems": 2,
+      "avatar_url": "https://github.com/rnegron.png?size=40"
+    },
+    {
+      "login": "fercgomes",
+      "score": 128.5,
+      "prs_reviewed": 7,
+      "authors_reviewed": 3,
+      "subsystems": 2,
+      "avatar_url": "https://github.com/fercgomes.png?size=40"
+    },
+    {
+      "login": "webjunkie",
+      "score": 127.5,
+      "prs_reviewed": 18,
+      "authors_reviewed": 8,
+      "subsystems": 2,
+      "avatar_url": "https://github.com/webjunkie.png?size=40"
+    },
+    {
+      "login": "a-lider",
+      "score": 117.5,
+      "prs_reviewed": 13,
+      "authors_reviewed": 4,
+      "subsystems": 2,
+      "avatar_url": "https://github.com/a-lider.png?size=40"
+    },
+    {
+      "login": "eli-r-ph",
+      "score": 115.5,
+      "prs_reviewed": 13,
+      "authors_reviewed": 4,
+      "subsystems": 3,
+      "avatar_url": "https://github.com/eli-r-ph.png?size=40"
+    },
+    {
+      "login": "vdekrijger",
+      "score": 112.0,
+      "prs_reviewed": 12,
+      "authors_reviewed": 6,
+      "subsystems": 2,
+      "avatar_url": "https://github.com/vdekrijger.png?size=40"
+    },
+    {
+      "login": "tatoalo",
+      "score": 108.0,
+      "prs_reviewed": 13,
+      "authors_reviewed": 7,
+      "subsystems": 3,
+      "avatar_url": "https://github.com/tatoalo.png?size=40"
+    },
+    {
+      "login": "jose-sequeira",
+      "score": 104.0,
+      "prs_reviewed": 5,
+      "authors_reviewed": 3,
+      "subsystems": 1,
+      "avatar_url": "https://github.com/jose-sequeira.png?size=40"
+    },
+    {
+      "login": "skoob13",
+      "score": 99.5,
+      "prs_reviewed": 12,
+      "authors_reviewed": 8,
+      "subsystems": 2,
+      "avatar_url": "https://github.com/skoob13.png?size=40"
+    },
+    {
+      "login": "fasyy612",
+      "score": 96.5,
+      "prs_reviewed": 8,
+      "authors_reviewed": 4,
+      "subsystems": 2,
+      "avatar_url": "https://github.com/fasyy612.png?size=40"
+    },
+    {
+      "login": "yasen-posthog",
+      "score": 92.0,
+      "prs_reviewed": 6,
+      "authors_reviewed": 4,
+      "subsystems": 3,
+      "avatar_url": "https://github.com/yasen-posthog.png?size=40"
+    },
+    {
+      "login": "github-advanced-security[bot]",
+      "score": 90.0,
+      "prs_reviewed": 5,
+      "authors_reviewed": 5,
+      "subsystems": 2,
+      "avatar_url": "https://github.com/github-advanced-security[bot].png?size=40"
+    },
+    {
+      "login": "tomasfarias",
+      "score": 85.0,
+      "prs_reviewed": 4,
+      "authors_reviewed": 2,
+      "subsystems": 2,
+      "avatar_url": "https://github.com/tomasfarias.png?size=40"
+    },
+    {
+      "login": "dmarchuk",
+      "score": 77.0,
+      "prs_reviewed": 5,
+      "authors_reviewed": 3,
+      "subsystems": 3,
+      "avatar_url": "https://github.com/dmarchuk.png?size=40"
+    },
+    {
+      "login": "mariusandra",
+      "score": 72.0,
+      "prs_reviewed": 6,
+      "authors_reviewed": 6,
+      "subsystems": 1,
+      "avatar_url": "https://github.com/mariusandra.png?size=40"
+    },
+    {
+      "login": "nickbest-ph",
+      "score": 68.0,
+      "prs_reviewed": 9,
+      "authors_reviewed": 3,
+      "subsystems": 2,
+      "avatar_url": "https://github.com/nickbest-ph.png?size=40"
+    },
+    {
+      "login": "ReeceJones",
+      "score": 67.0,
+      "prs_reviewed": 5,
+      "authors_reviewed": 3,
+      "subsystems": 2,
+      "avatar_url": "https://github.com/ReeceJones.png?size=40"
+    },
+    {
+      "login": "lricoy",
+      "score": 64.5,
+      "prs_reviewed": 8,
+      "authors_reviewed": 6,
+      "subsystems": 3,
+      "avatar_url": "https://github.com/lricoy.png?size=40"
+    },
+    {
+      "login": "Piccirello",
+      "score": 61.5,
+      "prs_reviewed": 7,
+      "authors_reviewed": 5,
+      "subsystems": 2,
+      "avatar_url": "https://github.com/Piccirello.png?size=40"
+    },
+    {
+      "login": "estefaniarabadan",
+      "score": 58.0,
+      "prs_reviewed": 4,
+      "authors_reviewed": 3,
+      "subsystems": 1,
+      "avatar_url": "https://github.com/estefaniarabadan.png?size=40"
+    },
+    {
+      "login": "MarconLP",
+      "score": 55.5,
+      "prs_reviewed": 8,
+      "authors_reviewed": 4,
+      "subsystems": 3,
+      "avatar_url": "https://github.com/MarconLP.png?size=40"
+    },
+    {
+      "login": "gantoine",
+      "score": 54.0,
+      "prs_reviewed": 2,
+      "authors_reviewed": 2,
+      "subsystems": 1,
+      "avatar_url": "https://github.com/gantoine.png?size=40"
+    },
+    {
+      "login": "rorylshanks",
+      "score": 52.0,
+      "prs_reviewed": 7,
+      "authors_reviewed": 5,
+      "subsystems": 2,
+      "avatar_url": "https://github.com/rorylshanks.png?size=40"
+    },
+    {
+      "login": "joshsny",
+      "score": 52.0,
+      "prs_reviewed": 9,
+      "authors_reviewed": 8,
+      "subsystems": 2,
+      "avatar_url": "https://github.com/joshsny.png?size=40"
+    },
+    {
+      "login": "ablaszkiewicz",
+      "score": 50.5,
+      "prs_reviewed": 8,
+      "authors_reviewed": 3,
+      "subsystems": 2,
+      "avatar_url": "https://github.com/ablaszkiewicz.png?size=40"
+    },
+    {
+      "login": "pawel-cebula",
+      "score": 50.5,
+      "prs_reviewed": 4,
+      "authors_reviewed": 3,
+      "subsystems": 1,
+      "avatar_url": "https://github.com/pawel-cebula.png?size=40"
+    },
+    {
+      "login": "rossgray",
+      "score": 49.5,
+      "prs_reviewed": 3,
+      "authors_reviewed": 2,
+      "subsystems": 2,
+      "avatar_url": "https://github.com/rossgray.png?size=40"
+    },
+    {
+      "login": "rafaeelaudibert",
+      "score": 44.0,
+      "prs_reviewed": 6,
+      "authors_reviewed": 4,
+      "subsystems": 2,
+      "avatar_url": "https://github.com/rafaeelaudibert.png?size=40"
+    },
+    {
+      "login": "TueHaulund",
+      "score": 44.0,
+      "prs_reviewed": 7,
+      "authors_reviewed": 4,
+      "subsystems": 1,
+      "avatar_url": "https://github.com/TueHaulund.png?size=40"
+    },
+    {
+      "login": "adamleithp",
+      "score": 43.5,
+      "prs_reviewed": 5,
+      "authors_reviewed": 5,
+      "subsystems": 2,
+      "avatar_url": "https://github.com/adamleithp.png?size=40"
+    },
+    {
+      "login": "meikelmosby",
+      "score": 43.5,
+      "prs_reviewed": 5,
+      "authors_reviewed": 2,
+      "subsystems": 1,
+      "avatar_url": "https://github.com/meikelmosby.png?size=40"
+    },
+    {
+      "login": "cat-ph",
+      "score": 42.0,
+      "prs_reviewed": 8,
+      "authors_reviewed": 4,
+      "subsystems": 2,
+      "avatar_url": "https://github.com/cat-ph.png?size=40"
+    },
+    {
+      "login": "cvolzer3",
+      "score": 41.5,
+      "prs_reviewed": 6,
+      "authors_reviewed": 5,
+      "subsystems": 1,
+      "avatar_url": "https://github.com/cvolzer3.png?size=40"
+    },
+    {
+      "login": "carlos-marchal-ph",
+      "score": 41.0,
+      "prs_reviewed": 8,
+      "authors_reviewed": 5,
+      "subsystems": 1,
+      "avatar_url": "https://github.com/carlos-marchal-ph.png?size=40"
+    },
+    {
+      "login": "orian",
+      "score": 39.5,
+      "prs_reviewed": 6,
+      "authors_reviewed": 5,
+      "subsystems": 1,
+      "avatar_url": "https://github.com/orian.png?size=40"
+    },
+    {
+      "login": "oliverb123",
+      "score": 39.0,
+      "prs_reviewed": 4,
+      "authors_reviewed": 2,
+      "subsystems": 2,
+      "avatar_url": "https://github.com/oliverb123.png?size=40"
+    },
+    {
+      "login": "georgemunyoro",
+      "score": 39.0,
+      "prs_reviewed": 9,
+      "authors_reviewed": 4,
+      "subsystems": 1,
+      "avatar_url": "https://github.com/georgemunyoro.png?size=40"
+    },
+    {
+      "login": "Gilbert09",
+      "score": 37.0,
+      "prs_reviewed": 6,
+      "authors_reviewed": 5,
+      "subsystems": 1,
+      "avatar_url": "https://github.com/Gilbert09.png?size=40"
+    },
+    {
+      "login": "abhischekt",
+      "score": 37.0,
+      "prs_reviewed": 2,
+      "authors_reviewed": 1,
+      "subsystems": 1,
+      "avatar_url": "https://github.com/abhischekt.png?size=40"
+    }
+  ],
+  "graph": {
+    "nodes": [
+      {
+        "id": "dustinbyrne",
+        "score": 9.0
+      },
+      {
+        "id": "Gilbert09",
+        "score": 37.0
+      },
+      {
+        "id": "robbie-c",
+        "score": 0
+      },
+      {
+        "id": "fivestarspicy",
+        "score": 0
+      },
+      {
+        "id": "tpgilmore",
+        "score": 18.0
+      },
+      {
+        "id": "lucasheriques",
+        "score": 4.5
+      },
+      {
+        "id": "VojtechBartos",
+        "score": 15.0
+      },
+      {
+        "id": "tests-posthog[bot]",
+        "score": 0
+      },
+      {
+        "id": "chatgpt-codex-connector[bot]",
+        "score": 411.0
+      },
+      {
+        "id": "abhischekt",
+        "score": 37.0
+      },
+      {
+        "id": "cat-ph",
+        "score": 42.0
+      },
+      {
+        "id": "jghoman",
+        "score": 4.5
+      },
+      {
+        "id": "rossgray",
+        "score": 49.5
+      },
+      {
+        "id": "nicowaltz",
+        "score": 0
+      },
+      {
+        "id": "hex-security-app[bot]",
+        "score": 159.5
+      },
+      {
+        "id": "posthog[bot]",
+        "score": 25.0
+      },
+      {
+        "id": "sakce",
+        "score": 0
+      },
+      {
+        "id": "pawel-cebula",
+        "score": 50.5
+      },
+      {
+        "id": "meikelmosby",
+        "score": 43.5
+      },
+      {
+        "id": "vdekrijger",
+        "score": 112.0
+      },
+      {
+        "id": "dmarticus",
+        "score": 34.5
+      },
+      {
+        "id": "ioannisj",
+        "score": 18.0
+      },
+      {
+        "id": "frankh",
+        "score": 33.0
+      },
+      {
+        "id": "jonathanlab",
+        "score": 9.0
+      },
+      {
+        "id": "ksvat",
+        "score": 4.0
+      },
+      {
+        "id": "arnaudhillen",
+        "score": 19.5
+      },
+      {
+        "id": "scheduled-actions-posthog[bot]",
+        "score": 0
+      },
+      {
+        "id": "arthurdedeus",
+        "score": 22.5
+      },
+      {
+        "id": "mendral-app[bot]",
+        "score": 0
+      },
+      {
+        "id": "andyzzhao",
+        "score": 18.5
+      },
+      {
+        "id": "fuziontech",
+        "score": 3.0
+      },
+      {
+        "id": "eli-r-ph",
+        "score": 115.5
+      },
+      {
+        "id": "github-actions[bot]",
+        "score": 1178.5
+      },
+      {
+        "id": "Radu-Raicea",
+        "score": 284.0
+      },
+      {
+        "id": "mariusandra",
+        "score": 72.0
+      },
+      {
+        "id": "Piccirello",
+        "score": 61.5
+      },
+      {
+        "id": "danielcarletti",
+        "score": 30.5
+      },
+      {
+        "id": "yasen-posthog",
+        "score": 92.0
+      },
+      {
+        "id": "MattBro",
+        "score": 37.0
+      },
+      {
+        "id": "jurajmajerik",
+        "score": 19.5
+      },
+      {
+        "id": "xljones",
+        "score": 0
+      },
+      {
+        "id": "sortafreel",
+        "score": 16.5
+      },
+      {
+        "id": "MattPua",
+        "score": 0
+      },
+      {
+        "id": "gantoine",
+        "score": 54.0
+      },
+      {
+        "id": "andehen",
+        "score": 6.0
+      },
+      {
+        "id": "feliperalmeida",
+        "score": 27.0
+      },
+      {
+        "id": "stamphog[bot]",
+        "score": 532.0
+      },
+      {
+        "id": "willwearing",
+        "score": 0
+      },
+      {
+        "id": "webjunkie",
+        "score": 127.5
+      },
+      {
+        "id": "jabahamondes",
+        "score": 30.0
+      },
+      {
+        "id": "turnipdabeets",
+        "score": 6.0
+      },
+      {
+        "id": "raquelmsmith",
+        "score": 10.0
+      },
+      {
+        "id": "github-advanced-security[bot]",
+        "score": 90.0
+      },
+      {
+        "id": "havenbarnes",
+        "score": 0
+      },
+      {
+        "id": "andrewm4894",
+        "score": 7.5
+      },
+      {
+        "id": "MarconLP",
+        "score": 55.5
+      },
+      {
+        "id": "christiaan-ph",
+        "score": 0
+      },
+      {
+        "id": "tatoalo",
+        "score": 108.0
+      },
+      {
+        "id": "bciaraldi",
+        "score": 3.0
+      },
+      {
+        "id": "pauldambra",
+        "score": 390.5
+      },
+      {
+        "id": "gewenyu99",
+        "score": 4.5
+      },
+      {
+        "id": "graphite-app[bot]",
+        "score": 626.0
+      },
+      {
+        "id": "nickbest-ph",
+        "score": 68.0
+      },
+      {
+        "id": "sampennington",
+        "score": 28.5
+      },
+      {
+        "id": "orian",
+        "score": 39.5
+      },
+      {
+        "id": "skoob13",
+        "score": 99.5
+      },
+      {
+        "id": "jonmcwest",
+        "score": 6.0
+      },
+      {
+        "id": "ablaszkiewicz",
+        "score": 50.5
+      },
+      {
+        "id": "andrewjmcgehee",
+        "score": 4.5
+      },
+      {
+        "id": "brandonleung",
+        "score": 30.5
+      },
+      {
+        "id": "lricoy",
+        "score": 64.5
+      },
+      {
+        "id": "charlesvien",
+        "score": 6.0
+      },
+      {
+        "id": "ReeceJones",
+        "score": 67.0
+      },
+      {
+        "id": "fercgomes",
+        "score": 128.5
+      },
+      {
+        "id": "DanielVisca",
+        "score": 36.0
+      },
+      {
+        "id": "gustavohstrassburger",
+        "score": 24.0
+      },
+      {
+        "id": "carlos-marchal-ph",
+        "score": 41.0
+      },
+      {
+        "id": "richardsolomou",
+        "score": 243.5
+      },
+      {
+        "id": "jordanm-posthog",
+        "score": 34.0
+      },
+      {
+        "id": "rnegron",
+        "score": 139.0
+      },
+      {
+        "id": "slshults",
+        "score": 10.0
+      },
+      {
+        "id": "cvolzer3",
+        "score": 41.5
+      },
+      {
+        "id": "fasyy612",
+        "score": 96.5
+      },
+      {
+        "id": "jose-sequeira",
+        "score": 104.0
+      },
+      {
+        "id": "hpouillot",
+        "score": 6.0
+      },
+      {
+        "id": "Twixes",
+        "score": 28.5
+      },
+      {
+        "id": "haacked",
+        "score": 265.5
+      },
+      {
+        "id": "dmarchuk",
+        "score": 77.0
+      },
+      {
+        "id": "seanpem",
+        "score": 0
+      },
+      {
+        "id": "joshsny",
+        "score": 52.0
+      },
+      {
+        "id": "edwinyjlim",
+        "score": 3.0
+      },
+      {
+        "id": "gesh",
+        "score": 18.0
+      },
+      {
+        "id": "adamleithp",
+        "score": 43.5
+      },
+      {
+        "id": "ryans-posthog",
+        "score": 6.0
+      },
+      {
+        "id": "mcoll-posthog",
+        "score": 0
+      },
+      {
+        "id": "benjackwhite",
+        "score": 35.0
+      },
+      {
+        "id": "patricio-posthog",
+        "score": 30.0
+      },
+      {
+        "id": "pl",
+        "score": 0
+      },
+      {
+        "id": "rafaeelaudibert",
+        "score": 44.0
+      },
+      {
+        "id": "thmsobrmlr",
+        "score": 0
+      },
+      {
+        "id": "rodrigoi",
+        "score": 21.0
+      },
+      {
+        "id": "a-lider",
+        "score": 117.5
+      },
+      {
+        "id": "oliverb123",
+        "score": 39.0
+      },
+      {
+        "id": "georgemunyoro",
+        "score": 39.0
+      },
+      {
+        "id": "greptile-apps[bot]",
+        "score": 1632.5
+      },
+      {
+        "id": "clr182",
+        "score": 0
+      },
+      {
+        "id": "z0br0wn",
+        "score": 20.0
+      },
+      {
+        "id": "veryayskiy",
+        "score": 24.0
+      },
+      {
+        "id": "k11kirky",
+        "score": 3.0
+      },
+      {
+        "id": "mp-hog",
+        "score": 36.0
+      },
+      {
+        "id": "inkeep[bot]",
+        "score": 0
+      },
+      {
+        "id": "EDsCODE",
+        "score": 4.5
+      },
+      {
+        "id": "tomasfarias",
+        "score": 85.0
+      },
+      {
+        "id": "matheus-vb",
+        "score": 19.0
+      },
+      {
+        "id": "posthog-js-upgrader[bot]",
+        "score": 0
+      },
+      {
+        "id": "copilot-swe-agent[bot]",
+        "score": 27.0
+      },
+      {
+        "id": "estefaniarabadan",
+        "score": 58.0
+      },
+      {
+        "id": "copilot-pull-request-reviewer[bot]",
+        "score": 551.0
+      },
+      {
+        "id": "veria-ai[bot]",
+        "score": 24.0
+      },
+      {
+        "id": "TueHaulund",
+        "score": 44.0
+      },
+      {
+        "id": "rorylshanks",
+        "score": 52.0
+      }
+    ],
+    "links": [
+      {
+        "source": "github-actions[bot]",
+        "target": "pauldambra",
+        "value": 15
+      },
+      {
+        "source": "github-actions[bot]",
+        "target": "lucasheriques",
+        "value": 7
+      },
+      {
+        "source": "github-actions[bot]",
+        "target": "tatoalo",
+        "value": 1
+      },
+      {
+        "source": "github-actions[bot]",
+        "target": "rafaeelaudibert",
+        "value": 1
+      },
+      {
+        "source": "github-actions[bot]",
+        "target": "sampennington",
+        "value": 44
+      },
+      {
+        "source": "github-actions[bot]",
+        "target": "mp-hog",
+        "value": 5
+      },
+      {
+        "source": "github-actions[bot]",
+        "target": "vdekrijger",
+        "value": 3
+      },
+      {
+        "source": "github-actions[bot]",
+        "target": "webjunkie",
+        "value": 3
+      },
+      {
+        "source": "github-actions[bot]",
+        "target": "yasen-posthog",
+        "value": 1
+      },
+      {
+        "source": "github-actions[bot]",
+        "target": "rnegron",
+        "value": 1
+      },
+      {
+        "source": "github-actions[bot]",
+        "target": "jonmcwest",
+        "value": 15
+      },
+      {
+        "source": "github-actions[bot]",
+        "target": "lricoy",
+        "value": 6
+      },
+      {
+        "source": "github-actions[bot]",
+        "target": "andrewm4894",
+        "value": 2
+      },
+      {
+        "source": "github-actions[bot]",
+        "target": "veryayskiy",
+        "value": 3
+      },
+      {
+        "source": "github-actions[bot]",
+        "target": "jurajmajerik",
+        "value": 1
+      },
+      {
+        "source": "github-actions[bot]",
+        "target": "Piccirello",
+        "value": 3
+      },
+      {
+        "source": "github-actions[bot]",
+        "target": "mariusandra",
+        "value": 2
+      },
+      {
+        "source": "github-actions[bot]",
+        "target": "posthog[bot]",
+        "value": 7
+      },
+      {
+        "source": "github-actions[bot]",
+        "target": "Gilbert09",
+        "value": 4
+      },
+      {
+        "source": "github-actions[bot]",
+        "target": "ksvat",
+        "value": 3
+      },
+      {
+        "source": "github-actions[bot]",
+        "target": "DanielVisca",
+        "value": 1
+      },
+      {
+        "source": "github-actions[bot]",
+        "target": "MattPua",
+        "value": 1
+      },
+      {
+        "source": "github-actions[bot]",
+        "target": "robbie-c",
+        "value": 1
+      },
+      {
+        "source": "github-actions[bot]",
+        "target": "andehen",
+        "value": 1
+      },
+      {
+        "source": "github-actions[bot]",
+        "target": "sakce",
+        "value": 2
+      },
+      {
+        "source": "github-actions[bot]",
+        "target": "jordanm-posthog",
+        "value": 1
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "posthog[bot]",
+        "value": 10
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "webjunkie",
+        "value": 15
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "rafaeelaudibert",
+        "value": 12
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "lucasheriques",
+        "value": 6
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "seanpem",
+        "value": 3
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "robbie-c",
+        "value": 6
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "arnaudhillen",
+        "value": 5
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "TueHaulund",
+        "value": 7
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "nickbest-ph",
+        "value": 13
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "eli-r-ph",
+        "value": 4
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "gustavohstrassburger",
+        "value": 8
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "bciaraldi",
+        "value": 1
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "rossgray",
+        "value": 3
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "sortafreel",
+        "value": 3
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "patricio-posthog",
+        "value": 1
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "pauldambra",
+        "value": 10
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "nicowaltz",
+        "value": 3
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "benjackwhite",
+        "value": 8
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "MarconLP",
+        "value": 3
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "adamleithp",
+        "value": 10
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "meikelmosby",
+        "value": 2
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "mp-hog",
+        "value": 7
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "andrewm4894",
+        "value": 11
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "danielcarletti",
+        "value": 3
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "ablaszkiewicz",
+        "value": 6
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "mariusandra",
+        "value": 4
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "vdekrijger",
+        "value": 9
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "fasyy612",
+        "value": 2
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "sampennington",
+        "value": 30
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "gesh",
+        "value": 3
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "oliverb123",
+        "value": 1
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "yasen-posthog",
+        "value": 7
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "cvolzer3",
+        "value": 1
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "lricoy",
+        "value": 10
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "jordanm-posthog",
+        "value": 4
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "matheus-vb",
+        "value": 5
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "haacked",
+        "value": 4
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "ksvat",
+        "value": 4
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "MattBro",
+        "value": 2
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "cat-ph",
+        "value": 3
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "carlos-marchal-ph",
+        "value": 5
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "veryayskiy",
+        "value": 5
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "a-lider",
+        "value": 2
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "rodrigoi",
+        "value": 5
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "rnegron",
+        "value": 9
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "richardsolomou",
+        "value": 8
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "EDsCODE",
+        "value": 1
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "arthurdedeus",
+        "value": 2
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "thmsobrmlr",
+        "value": 1
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "VojtechBartos",
+        "value": 4
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "jabahamondes",
+        "value": 1
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "dmarchuk",
+        "value": 2
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "mcoll-posthog",
+        "value": 1
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "orian",
+        "value": 2
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "jonmcwest",
+        "value": 7
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "frankh",
+        "value": 1
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "fercgomes",
+        "value": 4
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "ReeceJones",
+        "value": 7
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "dmarticus",
+        "value": 2
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "Twixes",
+        "value": 3
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "tomasfarias",
+        "value": 2
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "skoob13",
+        "value": 5
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "estefaniarabadan",
+        "value": 1
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "DanielVisca",
+        "value": 3
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "Piccirello",
+        "value": 3
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "ryans-posthog",
+        "value": 1
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "Gilbert09",
+        "value": 6
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "fivestarspicy",
+        "value": 1
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "z0br0wn",
+        "value": 2
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "tatoalo",
+        "value": 2
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "k11kirky",
+        "value": 1
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "charlesvien",
+        "value": 1
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "MattPua",
+        "value": 1
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "scheduled-actions-posthog[bot]",
+        "value": 1
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "havenbarnes",
+        "value": 3
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "andyzzhao",
+        "value": 1
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "brandonleung",
+        "value": 1
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "abhischekt",
+        "value": 1
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "andehen",
+        "value": 2
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "sakce",
+        "value": 4
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "joshsny",
+        "value": 2
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "fuziontech",
+        "value": 2
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "georgemunyoro",
+        "value": 1
+      },
+      {
+        "source": "greptile-apps[bot]",
+        "target": "turnipdabeets",
+        "value": 1
+      },
+      {
+        "source": "orian",
+        "target": "posthog[bot]",
+        "value": 1
+      },
+      {
+        "source": "orian",
+        "target": "nicowaltz",
+        "value": 4
+      },
+      {
+        "source": "orian",
+        "target": "bciaraldi",
+        "value": 2
+      },
+      {
+        "source": "orian",
+        "target": "webjunkie",
+        "value": 1
+      },
+      {
+        "source": "orian",
+        "target": "benjackwhite",
+        "value": 1
+      },
+      {
+        "source": "rorylshanks",
+        "target": "posthog[bot]",
+        "value": 1
+      },
+      {
+        "source": "rorylshanks",
+        "target": "carlos-marchal-ph",
+        "value": 1
+      },
+      {
+        "source": "rorylshanks",
+        "target": "jose-sequeira",
+        "value": 1
+      },
+      {
+        "source": "rorylshanks",
+        "target": "orian",
+        "value": 1
+      },
+      {
+        "source": "rorylshanks",
+        "target": "benjackwhite",
+        "value": 3
+      },
+      {
+        "source": "copilot-pull-request-reviewer[bot]",
+        "target": "webjunkie",
+        "value": 21
+      },
+      {
+        "source": "copilot-pull-request-reviewer[bot]",
+        "target": "gustavohstrassburger",
+        "value": 5
+      },
+      {
+        "source": "copilot-pull-request-reviewer[bot]",
+        "target": "sortafreel",
+        "value": 3
+      },
+      {
+        "source": "copilot-pull-request-reviewer[bot]",
+        "target": "ablaszkiewicz",
+        "value": 6
+      },
+      {
+        "source": "copilot-pull-request-reviewer[bot]",
+        "target": "oliverb123",
+        "value": 1
+      },
+      {
+        "source": "copilot-pull-request-reviewer[bot]",
+        "target": "joshsny",
+        "value": 3
+      },
+      {
+        "source": "copilot-pull-request-reviewer[bot]",
+        "target": "matheus-vb",
+        "value": 3
+      },
+      {
+        "source": "copilot-pull-request-reviewer[bot]",
+        "target": "haacked",
+        "value": 9
+      },
+      {
+        "source": "copilot-pull-request-reviewer[bot]",
+        "target": "gantoine",
+        "value": 1
+      },
+      {
+        "source": "copilot-pull-request-reviewer[bot]",
+        "target": "posthog[bot]",
+        "value": 1
+      },
+      {
+        "source": "copilot-pull-request-reviewer[bot]",
+        "target": "ryans-posthog",
+        "value": 1
+      },
+      {
+        "source": "copilot-pull-request-reviewer[bot]",
+        "target": "Gilbert09",
+        "value": 8
+      },
+      {
+        "source": "copilot-pull-request-reviewer[bot]",
+        "target": "mendral-app[bot]",
+        "value": 1
+      },
+      {
+        "source": "copilot-pull-request-reviewer[bot]",
+        "target": "fuziontech",
+        "value": 2
+      },
+      {
+        "source": "copilot-pull-request-reviewer[bot]",
+        "target": "georgemunyoro",
+        "value": 1
+      },
+      {
+        "source": "rnegron",
+        "target": "webjunkie",
+        "value": 15
+      },
+      {
+        "source": "rnegron",
+        "target": "gantoine",
+        "value": 1
+      },
+      {
+        "source": "rnegron",
+        "target": "mendral-app[bot]",
+        "value": 1
+      },
+      {
+        "source": "rnegron",
+        "target": "feliperalmeida",
+        "value": 2
+      },
+      {
+        "source": "gantoine",
+        "target": "webjunkie",
+        "value": 1
+      },
+      {
+        "source": "gantoine",
+        "target": "arnaudhillen",
+        "value": 2
+      },
+      {
+        "source": "adamleithp",
+        "target": "rafaeelaudibert",
+        "value": 1
+      },
+      {
+        "source": "adamleithp",
+        "target": "veryayskiy",
+        "value": 1
+      },
+      {
+        "source": "adamleithp",
+        "target": "mendral-app[bot]",
+        "value": 1
+      },
+      {
+        "source": "adamleithp",
+        "target": "ReeceJones",
+        "value": 1
+      },
+      {
+        "source": "adamleithp",
+        "target": "pauldambra",
+        "value": 1
+      },
+      {
+        "source": "brandonleung",
+        "target": "seanpem",
+        "value": 1
+      },
+      {
+        "source": "brandonleung",
+        "target": "richardsolomou",
+        "value": 5
+      },
+      {
+        "source": "carlos-marchal-ph",
+        "target": "seanpem",
+        "value": 1
+      },
+      {
+        "source": "carlos-marchal-ph",
+        "target": "Radu-Raicea",
+        "value": 1
+      },
+      {
+        "source": "carlos-marchal-ph",
+        "target": "andrewm4894",
+        "value": 1
+      },
+      {
+        "source": "carlos-marchal-ph",
+        "target": "scheduled-actions-posthog[bot]",
+        "value": 1
+      },
+      {
+        "source": "carlos-marchal-ph",
+        "target": "richardsolomou",
+        "value": 4
+      },
+      {
+        "source": "ryans-posthog",
+        "target": "tatoalo",
+        "value": 1
+      },
+      {
+        "source": "pauldambra",
+        "target": "tatoalo",
+        "value": 1
+      },
+      {
+        "source": "pauldambra",
+        "target": "vdekrijger",
+        "value": 5
+      },
+      {
+        "source": "pauldambra",
+        "target": "adamleithp",
+        "value": 1
+      },
+      {
+        "source": "pauldambra",
+        "target": "posthog[bot]",
+        "value": 88
+      },
+      {
+        "source": "pauldambra",
+        "target": "webjunkie",
+        "value": 3
+      },
+      {
+        "source": "pauldambra",
+        "target": "mariusandra",
+        "value": 2
+      },
+      {
+        "source": "pauldambra",
+        "target": "rnegron",
+        "value": 1
+      },
+      {
+        "source": "stamphog[bot]",
+        "target": "robbie-c",
+        "value": 4
+      },
+      {
+        "source": "stamphog[bot]",
+        "target": "lucasheriques",
+        "value": 6
+      },
+      {
+        "source": "stamphog[bot]",
+        "target": "nicowaltz",
+        "value": 1
+      },
+      {
+        "source": "stamphog[bot]",
+        "target": "andrewm4894",
+        "value": 7
+      },
+      {
+        "source": "stamphog[bot]",
+        "target": "gesh",
+        "value": 2
+      },
+      {
+        "source": "stamphog[bot]",
+        "target": "oliverb123",
+        "value": 1
+      },
+      {
+        "source": "stamphog[bot]",
+        "target": "yasen-posthog",
+        "value": 4
+      },
+      {
+        "source": "stamphog[bot]",
+        "target": "sampennington",
+        "value": 3
+      },
+      {
+        "source": "stamphog[bot]",
+        "target": "lricoy",
+        "value": 5
+      },
+      {
+        "source": "stamphog[bot]",
+        "target": "rafaeelaudibert",
+        "value": 4
+      },
+      {
+        "source": "stamphog[bot]",
+        "target": "veryayskiy",
+        "value": 3
+      },
+      {
+        "source": "stamphog[bot]",
+        "target": "mp-hog",
+        "value": 3
+      },
+      {
+        "source": "stamphog[bot]",
+        "target": "rnegron",
+        "value": 3
+      },
+      {
+        "source": "stamphog[bot]",
+        "target": "arthurdedeus",
+        "value": 1
+      },
+      {
+        "source": "stamphog[bot]",
+        "target": "thmsobrmlr",
+        "value": 1
+      },
+      {
+        "source": "stamphog[bot]",
+        "target": "jurajmajerik",
+        "value": 1
+      },
+      {
+        "source": "stamphog[bot]",
+        "target": "webjunkie",
+        "value": 5
+      },
+      {
+        "source": "stamphog[bot]",
+        "target": "pauldambra",
+        "value": 10
+      },
+      {
+        "source": "stamphog[bot]",
+        "target": "posthog[bot]",
+        "value": 4
+      },
+      {
+        "source": "stamphog[bot]",
+        "target": "jonmcwest",
+        "value": 3
+      },
+      {
+        "source": "stamphog[bot]",
+        "target": "DanielVisca",
+        "value": 2
+      },
+      {
+        "source": "stamphog[bot]",
+        "target": "richardsolomou",
+        "value": 1
+      },
+      {
+        "source": "stamphog[bot]",
+        "target": "vdekrijger",
+        "value": 1
+      },
+      {
+        "source": "stamphog[bot]",
+        "target": "jordanm-posthog",
+        "value": 1
+      },
+      {
+        "source": "mariusandra",
+        "target": "robbie-c",
+        "value": 1
+      },
+      {
+        "source": "mariusandra",
+        "target": "willwearing",
+        "value": 1
+      },
+      {
+        "source": "mariusandra",
+        "target": "Gilbert09",
+        "value": 1
+      },
+      {
+        "source": "mariusandra",
+        "target": "ReeceJones",
+        "value": 2
+      },
+      {
+        "source": "mariusandra",
+        "target": "nicowaltz",
+        "value": 1
+      },
+      {
+        "source": "mariusandra",
+        "target": "georgemunyoro",
+        "value": 1
+      },
+      {
+        "source": "hex-security-app[bot]",
+        "target": "TueHaulund",
+        "value": 1
+      },
+      {
+        "source": "hex-security-app[bot]",
+        "target": "carlos-marchal-ph",
+        "value": 1
+      },
+      {
+        "source": "hex-security-app[bot]",
+        "target": "yasen-posthog",
+        "value": 3
+      },
+      {
+        "source": "hex-security-app[bot]",
+        "target": "gustavohstrassburger",
+        "value": 3
+      },
+      {
+        "source": "hex-security-app[bot]",
+        "target": "lricoy",
+        "value": 1
+      },
+      {
+        "source": "hex-security-app[bot]",
+        "target": "pauldambra",
+        "value": 2
+      },
+      {
+        "source": "hex-security-app[bot]",
+        "target": "veryayskiy",
+        "value": 2
+      },
+      {
+        "source": "hex-security-app[bot]",
+        "target": "dmarchuk",
+        "value": 1
+      },
+      {
+        "source": "hex-security-app[bot]",
+        "target": "DanielVisca",
+        "value": 3
+      },
+      {
+        "source": "hex-security-app[bot]",
+        "target": "andrewm4894",
+        "value": 1
+      },
+      {
+        "source": "hex-security-app[bot]",
+        "target": "skoob13",
+        "value": 2
+      },
+      {
+        "source": "hex-security-app[bot]",
+        "target": "fercgomes",
+        "value": 1
+      },
+      {
+        "source": "hex-security-app[bot]",
+        "target": "Twixes",
+        "value": 1
+      },
+      {
+        "source": "hex-security-app[bot]",
+        "target": "k11kirky",
+        "value": 2
+      },
+      {
+        "source": "hex-security-app[bot]",
+        "target": "MattPua",
+        "value": 1
+      },
+      {
+        "source": "hex-security-app[bot]",
+        "target": "ReeceJones",
+        "value": 1
+      },
+      {
+        "source": "hex-security-app[bot]",
+        "target": "vdekrijger",
+        "value": 1
+      },
+      {
+        "source": "hex-security-app[bot]",
+        "target": "arnaudhillen",
+        "value": 1
+      },
+      {
+        "source": "hex-security-app[bot]",
+        "target": "Gilbert09",
+        "value": 1
+      },
+      {
+        "source": "hex-security-app[bot]",
+        "target": "rnegron",
+        "value": 1
+      },
+      {
+        "source": "veria-ai[bot]",
+        "target": "TueHaulund",
+        "value": 3
+      },
+      {
+        "source": "fasyy612",
+        "target": "TueHaulund",
+        "value": 13
+      },
+      {
+        "source": "fasyy612",
+        "target": "nicowaltz",
+        "value": 1
+      },
+      {
+        "source": "fasyy612",
+        "target": "ksvat",
+        "value": 1
+      },
+      {
+        "source": "fasyy612",
+        "target": "pauldambra",
+        "value": 1
+      },
+      {
+        "source": "Radu-Raicea",
+        "target": "posthog[bot]",
+        "value": 3
+      },
+      {
+        "source": "Radu-Raicea",
+        "target": "carlos-marchal-ph",
+        "value": 40
+      },
+      {
+        "source": "Radu-Raicea",
+        "target": "richardsolomou",
+        "value": 3
+      },
+      {
+        "source": "Radu-Raicea",
+        "target": "scheduled-actions-posthog[bot]",
+        "value": 1
+      },
+      {
+        "source": "eli-r-ph",
+        "target": "nickbest-ph",
+        "value": 10
+      },
+      {
+        "source": "eli-r-ph",
+        "target": "pl",
+        "value": 1
+      },
+      {
+        "source": "eli-r-ph",
+        "target": "havenbarnes",
+        "value": 1
+      },
+      {
+        "source": "eli-r-ph",
+        "target": "haacked",
+        "value": 1
+      },
+      {
+        "source": "nickbest-ph",
+        "target": "eli-r-ph",
+        "value": 5
+      },
+      {
+        "source": "nickbest-ph",
+        "target": "z0br0wn",
+        "value": 6
+      },
+      {
+        "source": "nickbest-ph",
+        "target": "Piccirello",
+        "value": 1
+      },
+      {
+        "source": "haacked",
+        "target": "gustavohstrassburger",
+        "value": 8
+      },
+      {
+        "source": "haacked",
+        "target": "patricio-posthog",
+        "value": 1
+      },
+      {
+        "source": "haacked",
+        "target": "matheus-vb",
+        "value": 9
+      },
+      {
+        "source": "haacked",
+        "target": "nickbest-ph",
+        "value": 1
+      },
+      {
+        "source": "haacked",
+        "target": "webjunkie",
+        "value": 2
+      },
+      {
+        "source": "haacked",
+        "target": "inkeep[bot]",
+        "value": 1
+      },
+      {
+        "source": "graphite-app[bot]",
+        "target": "gustavohstrassburger",
+        "value": 8
+      },
+      {
+        "source": "graphite-app[bot]",
+        "target": "pauldambra",
+        "value": 7
+      },
+      {
+        "source": "graphite-app[bot]",
+        "target": "nicowaltz",
+        "value": 1
+      },
+      {
+        "source": "graphite-app[bot]",
+        "target": "ablaszkiewicz",
+        "value": 4
+      },
+      {
+        "source": "graphite-app[bot]",
+        "target": "robbie-c",
+        "value": 1
+      },
+      {
+        "source": "graphite-app[bot]",
+        "target": "sampennington",
+        "value": 6
+      },
+      {
+        "source": "graphite-app[bot]",
+        "target": "lucasheriques",
+        "value": 5
+      },
+      {
+        "source": "graphite-app[bot]",
+        "target": "nickbest-ph",
+        "value": 8
+      },
+      {
+        "source": "graphite-app[bot]",
+        "target": "cvolzer3",
+        "value": 1
+      },
+      {
+        "source": "graphite-app[bot]",
+        "target": "jordanm-posthog",
+        "value": 1
+      },
+      {
+        "source": "graphite-app[bot]",
+        "target": "ksvat",
+        "value": 1
+      },
+      {
+        "source": "graphite-app[bot]",
+        "target": "MattBro",
+        "value": 1
+      },
+      {
+        "source": "graphite-app[bot]",
+        "target": "carlos-marchal-ph",
+        "value": 3
+      },
+      {
+        "source": "graphite-app[bot]",
+        "target": "danielcarletti",
+        "value": 3
+      },
+      {
+        "source": "graphite-app[bot]",
+        "target": "yasen-posthog",
+        "value": 6
+      },
+      {
+        "source": "graphite-app[bot]",
+        "target": "veryayskiy",
+        "value": 3
+      },
+      {
+        "source": "graphite-app[bot]",
+        "target": "andrewm4894",
+        "value": 12
+      },
+      {
+        "source": "graphite-app[bot]",
+        "target": "fasyy612",
+        "value": 1
+      },
+      {
+        "source": "graphite-app[bot]",
+        "target": "skoob13",
+        "value": 3
+      },
+      {
+        "source": "graphite-app[bot]",
+        "target": "rodrigoi",
+        "value": 2
+      },
+      {
+        "source": "graphite-app[bot]",
+        "target": "rnegron",
+        "value": 5
+      },
+      {
+        "source": "graphite-app[bot]",
+        "target": "haacked",
+        "value": 1
+      },
+      {
+        "source": "graphite-app[bot]",
+        "target": "jonmcwest",
+        "value": 4
+      },
+      {
+        "source": "graphite-app[bot]",
+        "target": "vdekrijger",
+        "value": 3
+      },
+      {
+        "source": "graphite-app[bot]",
+        "target": "TueHaulund",
+        "value": 2
+      },
+      {
+        "source": "graphite-app[bot]",
+        "target": "rafaeelaudibert",
+        "value": 2
+      },
+      {
+        "source": "graphite-app[bot]",
+        "target": "Twixes",
+        "value": 2
+      },
+      {
+        "source": "graphite-app[bot]",
+        "target": "ReeceJones",
+        "value": 1
+      },
+      {
+        "source": "graphite-app[bot]",
+        "target": "VojtechBartos",
+        "value": 1
+      },
+      {
+        "source": "graphite-app[bot]",
+        "target": "benjackwhite",
+        "value": 2
+      },
+      {
+        "source": "graphite-app[bot]",
+        "target": "dmarticus",
+        "value": 1
+      },
+      {
+        "source": "graphite-app[bot]",
+        "target": "fercgomes",
+        "value": 3
+      },
+      {
+        "source": "graphite-app[bot]",
+        "target": "mariusandra",
+        "value": 1
+      },
+      {
+        "source": "graphite-app[bot]",
+        "target": "Gilbert09",
+        "value": 3
+      },
+      {
+        "source": "graphite-app[bot]",
+        "target": "arthurdedeus",
+        "value": 1
+      },
+      {
+        "source": "graphite-app[bot]",
+        "target": "havenbarnes",
+        "value": 4
+      },
+      {
+        "source": "graphite-app[bot]",
+        "target": "andyzzhao",
+        "value": 1
+      },
+      {
+        "source": "graphite-app[bot]",
+        "target": "meikelmosby",
+        "value": 7
+      },
+      {
+        "source": "graphite-app[bot]",
+        "target": "a-lider",
+        "value": 2
+      },
+      {
+        "source": "graphite-app[bot]",
+        "target": "tatoalo",
+        "value": 1
+      },
+      {
+        "source": "tpgilmore",
+        "target": "bciaraldi",
+        "value": 3
+      },
+      {
+        "source": "tomasfarias",
+        "target": "rossgray",
+        "value": 4
+      },
+      {
+        "source": "tomasfarias",
+        "target": "VojtechBartos",
+        "value": 5
+      },
+      {
+        "source": "meikelmosby",
+        "target": "benjackwhite",
+        "value": 3
+      },
+      {
+        "source": "meikelmosby",
+        "target": "dmarchuk",
+        "value": 5
+      },
+      {
+        "source": "oliverb123",
+        "target": "sortafreel",
+        "value": 4
+      },
+      {
+        "source": "oliverb123",
+        "target": "posthog[bot]",
+        "value": 1
+      },
+      {
+        "source": "rafaeelaudibert",
+        "target": "lucasheriques",
+        "value": 3
+      },
+      {
+        "source": "rafaeelaudibert",
+        "target": "Radu-Raicea",
+        "value": 1
+      },
+      {
+        "source": "rafaeelaudibert",
+        "target": "posthog[bot]",
+        "value": 2
+      },
+      {
+        "source": "rafaeelaudibert",
+        "target": "fercgomes",
+        "value": 2
+      },
+      {
+        "source": "joshsny",
+        "target": "lucasheriques",
+        "value": 1
+      },
+      {
+        "source": "joshsny",
+        "target": "mp-hog",
+        "value": 1
+      },
+      {
+        "source": "joshsny",
+        "target": "pauldambra",
+        "value": 1
+      },
+      {
+        "source": "joshsny",
+        "target": "skoob13",
+        "value": 2
+      },
+      {
+        "source": "joshsny",
+        "target": "webjunkie",
+        "value": 1
+      },
+      {
+        "source": "joshsny",
+        "target": "MattBro",
+        "value": 1
+      },
+      {
+        "source": "joshsny",
+        "target": "tatoalo",
+        "value": 2
+      },
+      {
+        "source": "joshsny",
+        "target": "cvolzer3",
+        "value": 1
+      },
+      {
+        "source": "chatgpt-codex-connector[bot]",
+        "target": "pauldambra",
+        "value": 9
+      },
+      {
+        "source": "chatgpt-codex-connector[bot]",
+        "target": "MarconLP",
+        "value": 5
+      },
+      {
+        "source": "chatgpt-codex-connector[bot]",
+        "target": "webjunkie",
+        "value": 12
+      },
+      {
+        "source": "chatgpt-codex-connector[bot]",
+        "target": "andrewm4894",
+        "value": 9
+      },
+      {
+        "source": "chatgpt-codex-connector[bot]",
+        "target": "lricoy",
+        "value": 6
+      },
+      {
+        "source": "chatgpt-codex-connector[bot]",
+        "target": "posthog[bot]",
+        "value": 3
+      },
+      {
+        "source": "webjunkie",
+        "target": "pauldambra",
+        "value": 3
+      },
+      {
+        "source": "webjunkie",
+        "target": "adamleithp",
+        "value": 1
+      },
+      {
+        "source": "webjunkie",
+        "target": "rafaeelaudibert",
+        "value": 1
+      },
+      {
+        "source": "webjunkie",
+        "target": "rnegron",
+        "value": 12
+      },
+      {
+        "source": "webjunkie",
+        "target": "tests-posthog[bot]",
+        "value": 1
+      },
+      {
+        "source": "webjunkie",
+        "target": "veryayskiy",
+        "value": 1
+      },
+      {
+        "source": "webjunkie",
+        "target": "rodrigoi",
+        "value": 1
+      },
+      {
+        "source": "webjunkie",
+        "target": "Gilbert09",
+        "value": 1
+      },
+      {
+        "source": "arnaudhillen",
+        "target": "nicowaltz",
+        "value": 1
+      },
+      {
+        "source": "arnaudhillen",
+        "target": "fasyy612",
+        "value": 1
+      },
+      {
+        "source": "arnaudhillen",
+        "target": "TueHaulund",
+        "value": 1
+      },
+      {
+        "source": "dmarchuk",
+        "target": "benjackwhite",
+        "value": 3
+      },
+      {
+        "source": "dmarchuk",
+        "target": "meikelmosby",
+        "value": 2
+      },
+      {
+        "source": "dmarchuk",
+        "target": "havenbarnes",
+        "value": 1
+      },
+      {
+        "source": "danielcarletti",
+        "target": "MarconLP",
+        "value": 4
+      },
+      {
+        "source": "danielcarletti",
+        "target": "estefaniarabadan",
+        "value": 2
+      },
+      {
+        "source": "dmarticus",
+        "target": "gustavohstrassburger",
+        "value": 5
+      },
+      {
+        "source": "veryayskiy",
+        "target": "adamleithp",
+        "value": 2
+      },
+      {
+        "source": "veryayskiy",
+        "target": "andrewm4894",
+        "value": 1
+      },
+      {
+        "source": "veryayskiy",
+        "target": "pauldambra",
+        "value": 1
+      },
+      {
+        "source": "MarconLP",
+        "target": "danielcarletti",
+        "value": 2
+      },
+      {
+        "source": "MarconLP",
+        "target": "VojtechBartos",
+        "value": 1
+      },
+      {
+        "source": "MarconLP",
+        "target": "estefaniarabadan",
+        "value": 1
+      },
+      {
+        "source": "MarconLP",
+        "target": "Gilbert09",
+        "value": 5
+      },
+      {
+        "source": "vdekrijger",
+        "target": "adamleithp",
+        "value": 1
+      },
+      {
+        "source": "vdekrijger",
+        "target": "robbie-c",
+        "value": 2
+      },
+      {
+        "source": "vdekrijger",
+        "target": "pauldambra",
+        "value": 5
+      },
+      {
+        "source": "vdekrijger",
+        "target": "andrewm4894",
+        "value": 5
+      },
+      {
+        "source": "vdekrijger",
+        "target": "yasen-posthog",
+        "value": 2
+      },
+      {
+        "source": "vdekrijger",
+        "target": "andyzzhao",
+        "value": 1
+      },
+      {
+        "source": "richardsolomou",
+        "target": "scheduled-actions-posthog[bot]",
+        "value": 1
+      },
+      {
+        "source": "richardsolomou",
+        "target": "posthog[bot]",
+        "value": 1
+      },
+      {
+        "source": "richardsolomou",
+        "target": "Radu-Raicea",
+        "value": 1
+      },
+      {
+        "source": "richardsolomou",
+        "target": "andrewm4894",
+        "value": 11
+      },
+      {
+        "source": "richardsolomou",
+        "target": "carlos-marchal-ph",
+        "value": 2
+      },
+      {
+        "source": "richardsolomou",
+        "target": "brandonleung",
+        "value": 2
+      },
+      {
+        "source": "cat-ph",
+        "target": "ablaszkiewicz",
+        "value": 5
+      },
+      {
+        "source": "cat-ph",
+        "target": "christiaan-ph",
+        "value": 1
+      },
+      {
+        "source": "cat-ph",
+        "target": "bciaraldi",
+        "value": 1
+      },
+      {
+        "source": "cat-ph",
+        "target": "benjackwhite",
+        "value": 1
+      },
+      {
+        "source": "georgemunyoro",
+        "target": "mariusandra",
+        "value": 6
+      },
+      {
+        "source": "georgemunyoro",
+        "target": "lricoy",
+        "value": 1
+      },
+      {
+        "source": "georgemunyoro",
+        "target": "cat-ph",
+        "value": 1
+      },
+      {
+        "source": "georgemunyoro",
+        "target": "sampennington",
+        "value": 1
+      },
+      {
+        "source": "ksvat",
+        "target": "fasyy612",
+        "value": 1
+      },
+      {
+        "source": "cvolzer3",
+        "target": "gesh",
+        "value": 2
+      },
+      {
+        "source": "cvolzer3",
+        "target": "adamleithp",
+        "value": 1
+      },
+      {
+        "source": "cvolzer3",
+        "target": "posthog[bot]",
+        "value": 1
+      },
+      {
+        "source": "cvolzer3",
+        "target": "skoob13",
+        "value": 2
+      },
+      {
+        "source": "cvolzer3",
+        "target": "lucasheriques",
+        "value": 1
+      },
+      {
+        "source": "sampennington",
+        "target": "gesh",
+        "value": 5
+      },
+      {
+        "source": "sampennington",
+        "target": "thmsobrmlr",
+        "value": 1
+      },
+      {
+        "source": "sampennington",
+        "target": "pauldambra",
+        "value": 1
+      },
+      {
+        "source": "Twixes",
+        "target": "oliverb123",
+        "value": 1
+      },
+      {
+        "source": "Twixes",
+        "target": "sortafreel",
+        "value": 2
+      },
+      {
+        "source": "Twixes",
+        "target": "posthog[bot]",
+        "value": 1
+      },
+      {
+        "source": "Twixes",
+        "target": "andrewm4894",
+        "value": 1
+      },
+      {
+        "source": "a-lider",
+        "target": "yasen-posthog",
+        "value": 6
+      },
+      {
+        "source": "a-lider",
+        "target": "posthog[bot]",
+        "value": 1
+      },
+      {
+        "source": "a-lider",
+        "target": "ReeceJones",
+        "value": 5
+      },
+      {
+        "source": "a-lider",
+        "target": "mariusandra",
+        "value": 1
+      },
+      {
+        "source": "lricoy",
+        "target": "lucasheriques",
+        "value": 2
+      },
+      {
+        "source": "lricoy",
+        "target": "jordanm-posthog",
+        "value": 1
+      },
+      {
+        "source": "lricoy",
+        "target": "arthurdedeus",
+        "value": 2
+      },
+      {
+        "source": "lricoy",
+        "target": "jabahamondes",
+        "value": 1
+      },
+      {
+        "source": "lricoy",
+        "target": "pauldambra",
+        "value": 1
+      },
+      {
+        "source": "lricoy",
+        "target": "posthog[bot]",
+        "value": 1
+      },
+      {
+        "source": "skoob13",
+        "target": "cvolzer3",
+        "value": 3
+      },
+      {
+        "source": "skoob13",
+        "target": "ksvat",
+        "value": 2
+      },
+      {
+        "source": "skoob13",
+        "target": "posthog[bot]",
+        "value": 2
+      },
+      {
+        "source": "skoob13",
+        "target": "andrewm4894",
+        "value": 1
+      },
+      {
+        "source": "skoob13",
+        "target": "VojtechBartos",
+        "value": 2
+      },
+      {
+        "source": "skoob13",
+        "target": "frankh",
+        "value": 1
+      },
+      {
+        "source": "skoob13",
+        "target": "mp-hog",
+        "value": 1
+      },
+      {
+        "source": "skoob13",
+        "target": "vdekrijger",
+        "value": 3
+      },
+      {
+        "source": "jabahamondes",
+        "target": "lricoy",
+        "value": 5
+      },
+      {
+        "source": "arthurdedeus",
+        "target": "lricoy",
+        "value": 3
+      },
+      {
+        "source": "arthurdedeus",
+        "target": "robbie-c",
+        "value": 1
+      },
+      {
+        "source": "charlesvien",
+        "target": "joshsny",
+        "value": 1
+      },
+      {
+        "source": "copilot-swe-agent[bot]",
+        "target": "matheus-vb",
+        "value": 9
+      },
+      {
+        "source": "matheus-vb",
+        "target": "haacked",
+        "value": 3
+      },
+      {
+        "source": "TueHaulund",
+        "target": "ksvat",
+        "value": 3
+      },
+      {
+        "source": "TueHaulund",
+        "target": "arnaudhillen",
+        "value": 4
+      },
+      {
+        "source": "TueHaulund",
+        "target": "fasyy612",
+        "value": 1
+      },
+      {
+        "source": "TueHaulund",
+        "target": "pauldambra",
+        "value": 1
+      },
+      {
+        "source": "fercgomes",
+        "target": "MattBro",
+        "value": 7
+      },
+      {
+        "source": "fercgomes",
+        "target": "rafaeelaudibert",
+        "value": 4
+      },
+      {
+        "source": "fercgomes",
+        "target": "gewenyu99",
+        "value": 1
+      },
+      {
+        "source": "ablaszkiewicz",
+        "target": "cat-ph",
+        "value": 6
+      },
+      {
+        "source": "ablaszkiewicz",
+        "target": "benjackwhite",
+        "value": 2
+      },
+      {
+        "source": "ablaszkiewicz",
+        "target": "christiaan-ph",
+        "value": 1
+      },
+      {
+        "source": "Gilbert09",
+        "target": "danielcarletti",
+        "value": 1
+      },
+      {
+        "source": "Gilbert09",
+        "target": "estefaniarabadan",
+        "value": 2
+      },
+      {
+        "source": "Gilbert09",
+        "target": "yasen-posthog",
+        "value": 1
+      },
+      {
+        "source": "Gilbert09",
+        "target": "mendral-app[bot]",
+        "value": 1
+      },
+      {
+        "source": "Gilbert09",
+        "target": "MarconLP",
+        "value": 2
+      },
+      {
+        "source": "estefaniarabadan",
+        "target": "danielcarletti",
+        "value": 9
+      },
+      {
+        "source": "estefaniarabadan",
+        "target": "MarconLP",
+        "value": 2
+      },
+      {
+        "source": "estefaniarabadan",
+        "target": "Gilbert09",
+        "value": 3
+      },
+      {
+        "source": "jurajmajerik",
+        "target": "veryayskiy",
+        "value": 1
+      },
+      {
+        "source": "jurajmajerik",
+        "target": "mp-hog",
+        "value": 1
+      },
+      {
+        "source": "jurajmajerik",
+        "target": "rodrigoi",
+        "value": 2
+      },
+      {
+        "source": "jurajmajerik",
+        "target": "andehen",
+        "value": 1
+      },
+      {
+        "source": "abhischekt",
+        "target": "mcoll-posthog",
+        "value": 8
+      },
+      {
+        "source": "yasen-posthog",
+        "target": "a-lider",
+        "value": 1
+      },
+      {
+        "source": "yasen-posthog",
+        "target": "rodrigoi",
+        "value": 1
+      },
+      {
+        "source": "yasen-posthog",
+        "target": "ReeceJones",
+        "value": 5
+      },
+      {
+        "source": "yasen-posthog",
+        "target": "feliperalmeida",
+        "value": 1
+      },
+      {
+        "source": "ReeceJones",
+        "target": "yasen-posthog",
+        "value": 6
+      },
+      {
+        "source": "ReeceJones",
+        "target": "fivestarspicy",
+        "value": 2
+      },
+      {
+        "source": "ReeceJones",
+        "target": "a-lider",
+        "value": 1
+      },
+      {
+        "source": "pawel-cebula",
+        "target": "mcoll-posthog",
+        "value": 2
+      },
+      {
+        "source": "pawel-cebula",
+        "target": "abhischekt",
+        "value": 3
+      },
+      {
+        "source": "pawel-cebula",
+        "target": "feliperalmeida",
+        "value": 2
+      },
+      {
+        "source": "tatoalo",
+        "target": "skoob13",
+        "value": 5
+      },
+      {
+        "source": "tatoalo",
+        "target": "VojtechBartos",
+        "value": 1
+      },
+      {
+        "source": "tatoalo",
+        "target": "posthog[bot]",
+        "value": 1
+      },
+      {
+        "source": "tatoalo",
+        "target": "sortafreel",
+        "value": 3
+      },
+      {
+        "source": "tatoalo",
+        "target": "ryans-posthog",
+        "value": 1
+      },
+      {
+        "source": "tatoalo",
+        "target": "Twixes",
+        "value": 3
+      },
+      {
+        "source": "tatoalo",
+        "target": "joshsny",
+        "value": 2
+      },
+      {
+        "source": "andyzzhao",
+        "target": "robbie-c",
+        "value": 2
+      },
+      {
+        "source": "andyzzhao",
+        "target": "posthog[bot]",
+        "value": 1
+      },
+      {
+        "source": "github-advanced-security[bot]",
+        "target": "lricoy",
+        "value": 2
+      },
+      {
+        "source": "github-advanced-security[bot]",
+        "target": "gustavohstrassburger",
+        "value": 2
+      },
+      {
+        "source": "github-advanced-security[bot]",
+        "target": "carlos-marchal-ph",
+        "value": 1
+      },
+      {
+        "source": "github-advanced-security[bot]",
+        "target": "k11kirky",
+        "value": 1
+      },
+      {
+        "source": "github-advanced-security[bot]",
+        "target": "andrewm4894",
+        "value": 4
+      },
+      {
+        "source": "jordanm-posthog",
+        "target": "lricoy",
+        "value": 4
+      },
+      {
+        "source": "jordanm-posthog",
+        "target": "xljones",
+        "value": 1
+      },
+      {
+        "source": "fuziontech",
+        "target": "EDsCODE",
+        "value": 1
+      },
+      {
+        "source": "sortafreel",
+        "target": "posthog[bot]",
+        "value": 1
+      },
+      {
+        "source": "sortafreel",
+        "target": "Twixes",
+        "value": 1
+      },
+      {
+        "source": "sortafreel",
+        "target": "andrewm4894",
+        "value": 1
+      },
+      {
+        "source": "sortafreel",
+        "target": "skoob13",
+        "value": 1
+      },
+      {
+        "source": "mp-hog",
+        "target": "rodrigoi",
+        "value": 3
+      },
+      {
+        "source": "feliperalmeida",
+        "target": "rnegron",
+        "value": 2
+      },
+      {
+        "source": "feliperalmeida",
+        "target": "webjunkie",
+        "value": 1
+      },
+      {
+        "source": "feliperalmeida",
+        "target": "ReeceJones",
+        "value": 1
+      },
+      {
+        "source": "gustavohstrassburger",
+        "target": "haacked",
+        "value": 1
+      },
+      {
+        "source": "gustavohstrassburger",
+        "target": "dmarticus",
+        "value": 2
+      },
+      {
+        "source": "patricio-posthog",
+        "target": "haacked",
+        "value": 2
+      },
+      {
+        "source": "patricio-posthog",
+        "target": "matheus-vb",
+        "value": 2
+      },
+      {
+        "source": "patricio-posthog",
+        "target": "dmarticus",
+        "value": 1
+      },
+      {
+        "source": "edwinyjlim",
+        "target": "gewenyu99",
+        "value": 1
+      },
+      {
+        "source": "benjackwhite",
+        "target": "ablaszkiewicz",
+        "value": 1
+      },
+      {
+        "source": "benjackwhite",
+        "target": "dmarchuk",
+        "value": 1
+      },
+      {
+        "source": "benjackwhite",
+        "target": "jose-sequeira",
+        "value": 2
+      },
+      {
+        "source": "rossgray",
+        "target": "VojtechBartos",
+        "value": 1
+      },
+      {
+        "source": "rossgray",
+        "target": "tomasfarias",
+        "value": 8
+      },
+      {
+        "source": "rodrigoi",
+        "target": "jurajmajerik",
+        "value": 1
+      },
+      {
+        "source": "rodrigoi",
+        "target": "mp-hog",
+        "value": 1
+      },
+      {
+        "source": "Piccirello",
+        "target": "webjunkie",
+        "value": 2
+      },
+      {
+        "source": "Piccirello",
+        "target": "pauldambra",
+        "value": 1
+      },
+      {
+        "source": "Piccirello",
+        "target": "veryayskiy",
+        "value": 2
+      },
+      {
+        "source": "Piccirello",
+        "target": "rnegron",
+        "value": 3
+      },
+      {
+        "source": "Piccirello",
+        "target": "feliperalmeida",
+        "value": 1
+      },
+      {
+        "source": "frankh",
+        "target": "jonmcwest",
+        "value": 3
+      },
+      {
+        "source": "frankh",
+        "target": "DanielVisca",
+        "value": 2
+      },
+      {
+        "source": "bciaraldi",
+        "target": "orian",
+        "value": 1
+      },
+      {
+        "source": "DanielVisca",
+        "target": "jonmcwest",
+        "value": 2
+      },
+      {
+        "source": "DanielVisca",
+        "target": "frankh",
+        "value": 4
+      },
+      {
+        "source": "jonmcwest",
+        "target": "frankh",
+        "value": 1
+      },
+      {
+        "source": "turnipdabeets",
+        "target": "posthog-js-upgrader[bot]",
+        "value": 1
+      },
+      {
+        "source": "MattBro",
+        "target": "fercgomes",
+        "value": 3
+      },
+      {
+        "source": "MattBro",
+        "target": "VojtechBartos",
+        "value": 1
+      },
+      {
+        "source": "jose-sequeira",
+        "target": "eli-r-ph",
+        "value": 19
+      },
+      {
+        "source": "jose-sequeira",
+        "target": "benjackwhite",
+        "value": 1
+      },
+      {
+        "source": "jose-sequeira",
+        "target": "z0br0wn",
+        "value": 1
+      },
+      {
+        "source": "andehen",
+        "target": "jurajmajerik",
+        "value": 1
+      },
+      {
+        "source": "gesh",
+        "target": "sampennington",
+        "value": 3
+      },
+      {
+        "source": "VojtechBartos",
+        "target": "skoob13",
+        "value": 1
+      },
+      {
+        "source": "VojtechBartos",
+        "target": "tatoalo",
+        "value": 1
+      },
+      {
+        "source": "slshults",
+        "target": "clr182",
+        "value": 1
+      },
+      {
+        "source": "lucasheriques",
+        "target": "DanielVisca",
+        "value": 1
+      },
+      {
+        "source": "gewenyu99",
+        "target": "fercgomes",
+        "value": 1
+      },
+      {
+        "source": "raquelmsmith",
+        "target": "posthog[bot]",
+        "value": 2
+      },
+      {
+        "source": "posthog[bot]",
+        "target": "Gilbert09",
+        "value": 8
+      },
+      {
+        "source": "jonathanlab",
+        "target": "k11kirky",
+        "value": 1
+      },
+      {
+        "source": "k11kirky",
+        "target": "charlesvien",
+        "value": 1
+      },
+      {
+        "source": "dustinbyrne",
+        "target": "posthog[bot]",
+        "value": 1
+      },
+      {
+        "source": "andrewm4894",
+        "target": "richardsolomou",
+        "value": 1
+      },
+      {
+        "source": "jghoman",
+        "target": "fuziontech",
+        "value": 1
+      },
+      {
+        "source": "ioannisj",
+        "target": "turnipdabeets",
+        "value": 4
+      },
+      {
+        "source": "z0br0wn",
+        "target": "nickbest-ph",
+        "value": 2
+      },
+      {
+        "source": "hpouillot",
+        "target": "bciaraldi",
+        "value": 1
+      },
+      {
+        "source": "EDsCODE",
+        "target": "fuziontech",
+        "value": 1
+      },
+      {
+        "source": "andrewjmcgehee",
+        "target": "sakce",
+        "value": 1
+      }
+    ]
+  },
+  "trends": [
+    {
+      "week": "2026-W05",
+      "points": 3.0
+    },
+    {
+      "week": "2026-W11",
+      "points": 27.0
+    },
+    {
+      "week": "2026-W12",
+      "points": 6.0
+    },
+    {
+      "week": "2026-W13",
+      "points": 22.0
+    },
+    {
+      "week": "2026-W14",
+      "points": 13.0
+    },
+    {
+      "week": "2026-W15",
+      "points": 304.0
+    },
+    {
+      "week": "2026-W16",
+      "points": 790.8
+    },
+    {
+      "week": "2026-W17",
+      "points": 4113.0
+    },
+    {
+      "week": "2026-W18",
+      "points": 4569.2
+    },
+    {
+      "week": "2026-W19",
+      "points": 84.0
+    }
+  ],
+  "coverage": [
+    {
+      "subsystem": "other",
+      "reviews": 1234
+    },
+    {
+      "subsystem": "posthog/api",
+      "reviews": 306
+    },
+    {
+      "subsystem": "posthog/models",
+      "reviews": 47
+    }
+  ]
+}
