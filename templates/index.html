@@ -123,6 +123,27 @@
     /* ── Charts ── */
     .chart-wrap { height: 340px; position: relative; }
 
+    /* ── Formula ── */
+    .formula-box {
+      background: #0e0c14; border: 1px solid var(--border);
+      border-radius: 10px; padding: 18px 22px; margin: 20px 0;
+      font-family: 'JetBrains Mono', 'Fira Code', monospace; font-size: 13px;
+      color: #c9c3da; overflow-x: auto; white-space: nowrap;
+    }
+    .formula-box .f-var  { color: #7c3aed; font-weight: 700; }
+    .formula-box .f-op   { color: var(--muted); }
+    .formula-box .f-val  { color: var(--accent); font-weight: 700; }
+    .var-table { width: 100%; border-collapse: collapse; font-size: 12.5px; margin-top: 14px; }
+    .var-table td { padding: 6px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+    .var-table td:first-child { font-family: monospace; color: #7c3aed; width: 180px; white-space: nowrap; }
+    .var-table td:last-child { color: #c9c3da; line-height: 1.5; }
+    .var-table tr:last-child td { border-bottom: none; }
+    .tag { display: inline-block; font-size: 10.5px; font-weight: 600; padding: 1px 7px; border-radius: 4px; margin-left: 6px; vertical-align: middle; }
+    .tag-always  { background: rgba(16,185,129,.15); color: #10b981; }
+    .tag-sampled { background: rgba(245,78,0,.15);   color: var(--accent); }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
+    @media (max-width: 900px) { .two-col { grid-template-columns: 1fr; } }
+
     /* ── Scrollbar ── */
     ::-webkit-scrollbar { width: 6px; height: 6px; }
     ::-webkit-scrollbar-track { background: transparent; }
@@ -186,42 +207,110 @@
 
     <div class="metric-row" id="overview-metrics"></div>
 
-    <div class="card" style="margin-bottom:24px">
+    <div class="card" style="margin-bottom:20px">
       <p style="font-size:14px;line-height:1.8;color:#c9c3da">
-        The <strong style="color:var(--accent)">Review Influence Score</strong> captures the leverage an engineer creates
-        when they review code. A pull request merged after a substantive review — especially one in a critical subsystem
-        that prompted the author to change their code — represents <em>compounded impact</em>: the reviewer's knowledge
-        multiplied across every user who benefits from that fix or feature.
+        The <strong style="color:var(--accent)">Review Influence Score</strong> measures how much an engineer improves the
+        team's output through code reviews. Writing code ships one feature; a great review makes that feature more correct,
+        more maintainable, and less likely to cause an incident — multiplying the reviewer's expertise across every user
+        who benefits. This dashboard surfaces those multipliers.
       </p>
     </div>
 
-    <div class="signals-grid">
-      <div class="signal-card">
-        <div class="num">①</div>
-        <div class="label">PR Complexity</div>
-        <div class="desc">Scores 1–5 based on files changed and total line delta. Bigger, riskier PRs earn higher multipliers.</div>
+    <!-- Scoring formula -->
+    <div class="card" style="margin-bottom:20px">
+      <p style="font-size:12px;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:4px">Scoring Formula</p>
+      <p style="font-size:13px;color:#c9c3da;margin-bottom:2px">Each review on a merged PR contributes the following to the reviewer's cumulative score:</p>
+      <div class="formula-box">
+        <span class="f-var">points</span>
+        <span class="f-op"> = </span>
+        <span class="f-var">PR Complexity</span>
+        <span class="f-op"> × </span>
+        <span class="f-var">Subsystem Criticality</span>
+        <span class="f-op"> × (1 + </span>
+        <span class="f-var">Review Depth</span>
+        <span class="f-op">) × </span>
+        <span class="f-var">Acceptance Weight</span>
+        <span class="f-op"> × </span>
+        <span class="f-var">Sample Weight</span>
       </div>
-      <div class="signal-card">
-        <div class="num">②</div>
-        <div class="label">Subsystem Criticality</div>
-        <div class="desc">Core paths like <code>/hogql</code>, <code>/plugin-server</code>, <code>/posthog/api</code> carry 2–3× weight multipliers.</div>
-      </div>
-      <div class="signal-card">
-        <div class="num">③</div>
-        <div class="label">Review Depth</div>
-        <div class="desc">Reviews &gt;30 words or "Request Changes" decisions signal substantive engagement, not rubber-stamping.</div>
-      </div>
-      <div class="signal-card">
-        <div class="num">④</div>
-        <div class="label">Reviewer Centrality</div>
-        <div class="desc">Engineers who review across many authors and subsystems act as knowledge bridges for the whole team.</div>
-      </div>
-      <div class="signal-card">
-        <div class="num">⑤</div>
-        <div class="label">Acceptance Weight</div>
-        <div class="desc">A 1.5× multiplier when the author commits new code after the review — proof the feedback had a real effect.</div>
+      <table class="var-table">
+        <tr>
+          <td>① PR Complexity</td>
+          <td>
+            <strong>Range 1–5.</strong> Derived from PR metadata fields (<code>changed_files</code>, <code>additions + deletions</code>) at no extra API cost.
+            Reviewing a large, risky change demands more expertise and prevents more bugs than reviewing a small one-liner, so bigger PRs earn higher multipliers.<br>
+            <span style="color:var(--muted);font-size:11.5px">
+              &gt;5 files or &gt;200 lines → 2 &nbsp;·&nbsp; &gt;15 / 600 → 3 &nbsp;·&nbsp; &gt;30 / 1,500 → 4 &nbsp;·&nbsp; &gt;60 / 4,000 → 5
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td>② Subsystem Criticality</td>
+          <td>
+            <strong>Range 1–3.</strong> The first page of changed file paths (≤ 30 files) is scanned to find the highest-criticality subsystem touched.
+            A defect in a core subsystem affects far more users and is much harder to roll back than a bug in a peripheral module, so reviews there carry heavier weight.<br>
+            <span style="color:var(--muted);font-size:11.5px">
+              <code>plugin-server</code>, <code>hogql</code> → 3 &nbsp;·&nbsp; <code>posthog/api</code>, <code>posthog/models</code> → 2 &nbsp;·&nbsp; everything else → 1
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td>③ Review Depth</td>
+          <td>
+            <strong>Additive bonus 0–2.5,</strong> applied as <em>(1 + bonus)</em> so even a zero-depth review still contributes. Rewards engineers who engage substantively with the code rather than rubber-stamping.<br>
+            <span style="color:var(--muted);font-size:11.5px">
+              Review body &gt; 30 words → +1.0 &nbsp;·&nbsp; <em>CHANGES_REQUESTED</em> decision → +1.5 &nbsp;·&nbsp; <em>APPROVED</em> decision → +0.5
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td>④ Acceptance Weight</td>
+          <td>
+            <strong>1.0× or 1.5×.</strong> Set to 1.5 when any reviewer submitted a <em>CHANGES_REQUESTED</em> decision — a reliable heuristic that the author revised their code before the PR was merged.
+            This rewards reviews that provably changed what shipped, rather than feedback that was simply ignored.
+          </td>
+        </tr>
+        <tr>
+          <td>Sample Weight <span style="font-size:10px;color:var(--muted)">(statistical correction)</span></td>
+          <td>
+            <strong>1.0× for large PRs; 4.0× for sampled small PRs.</strong> Because only 25 % of small PRs are fully processed, each selected one is scaled by 1 ÷ 0.25 = 4 to ensure cumulative scores remain unbiased estimates of what a full scan would produce. See <em>Stratified Sampling</em> below.
+          </td>
+        </tr>
+        <tr>
+          <td>⑤ Network Reach <span style="font-size:10px;color:var(--muted)">(leaderboard stat)</span></td>
+          <td>
+            <strong>Not a score multiplier — a supplementary signal.</strong> Counts how many distinct PR authors a reviewer has helped and how many different subsystems they have touched. Engineers with broad reach act as knowledge bridges across the organisation; this is surfaced in the <em>Authors</em> and <em>Subsystems</em> columns of the leaderboard rather than folded into the numeric score.
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Sampling methodology -->
+    <div class="card" style="margin-bottom:20px">
+      <p style="font-size:12px;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:10px">Stratified Sampling</p>
+      <p style="font-size:13.5px;color:#c9c3da;line-height:1.7;margin-bottom:14px">
+        To keep API usage manageable on a large repo, we apply stratified sampling at the PR level.
+        The stratum boundary is set by PR size from metadata fields (<code>changed_files</code>, <code>additions + deletions</code>),
+        which are free in the search result — no extra API call.
+      </p>
+      <div class="two-col">
+        <div class="signal-card">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+            <span style="font-size:18px;font-weight:800;color:#10b981">Always included</span>
+            <span class="tag tag-always">100 %</span>
+          </div>
+          <div class="desc">PRs with <strong>≥ 10 files changed</strong> or <strong>≥ 400 net lines</strong>. These are high-signal events where review quality has the largest impact. All are fully processed (file scan + reviews).</div>
+        </div>
+        <div class="signal-card">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+            <span style="font-size:18px;font-weight:800;color:var(--accent)">Randomly sampled</span>
+            <span class="tag tag-sampled">25 %</span>
+          </div>
+          <div class="desc">PRs below both thresholds. One in four is selected at random. Each selected PR contributes points scaled by <strong>× 4</strong> (inverse-probability weighting), preserving the statistical integrity of cumulative scores.</div>
+        </div>
       </div>
     </div>
+
   </section>
 
   <!-- LEADERBOARD -->
