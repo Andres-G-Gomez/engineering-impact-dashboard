@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PostHog · Review Influence Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+  <style>
+    :root {
+      --bg:      #13111a;
+      --surface: #1c1929;
+      --border:  #2e2a3b;
+      --accent:  #f54e00;
+      --accent2: #7c3aed;
+      --text:    #e5e0f0;
+      --muted:   #7b7391;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: 'Inter', system-ui, sans-serif; display: flex; height: 100vh; overflow: hidden; }
+
+    /* ── Sidebar ── */
+    #sidebar {
+      width: 250px; min-width: 250px;
+      background: var(--surface);
+      border-right: 1px solid var(--border);
+      display: flex; flex-direction: column;
+      padding: 0;
+    }
+    #sidebar .logo {
+      display: flex; align-items: center; gap: 10px;
+      padding: 22px 20px 18px;
+      border-bottom: 1px solid var(--border);
+    }
+    #sidebar .logo svg { flex-shrink: 0; }
+    #sidebar .logo span { font-size: 15px; font-weight: 700; letter-spacing: .3px; }
+    #sidebar .logo .sub { font-size: 11px; color: var(--muted); font-weight: 400; }
+    nav { flex: 1; padding: 14px 0; }
+    nav button {
+      width: 100%; text-align: left;
+      background: none; border: none; cursor: pointer;
+      color: var(--muted); font-size: 13.5px;
+      padding: 10px 20px;
+      display: flex; align-items: center; gap: 10px;
+      border-left: 3px solid transparent;
+      transition: background .15s, color .15s, border-color .15s;
+    }
+    nav button:hover { background: rgba(255,255,255,.04); color: var(--text); }
+    nav button.active { color: var(--text); border-left-color: var(--accent); background: rgba(245,78,0,.07); font-weight: 600; }
+    nav button svg { opacity: .65; }
+    nav button.active svg { opacity: 1; }
+    #sidebar .meta {
+      padding: 14px 20px;
+      border-top: 1px solid var(--border);
+      font-size: 11px; color: var(--muted); line-height: 1.6;
+    }
+
+    /* ── Main ── */
+    #main { flex: 1; overflow-y: auto; padding: 32px 36px; }
+
+    .section { display: none; }
+    .section.active { display: block; }
+
+    h2 { font-size: 22px; font-weight: 700; margin-bottom: 6px; }
+    .subtitle { font-size: 13.5px; color: var(--muted); margin-bottom: 28px; }
+
+    /* ── Cards ── */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 24px;
+    }
+
+    /* ── Overview signals ── */
+    .signals-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px,1fr)); gap: 16px; margin-top: 24px; }
+    .signal-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 12px; padding: 18px 20px;
+    }
+    .signal-card .num { font-size: 28px; font-weight: 800; color: var(--accent); }
+    .signal-card .label { font-size: 12px; color: var(--muted); margin-top: 2px; }
+    .signal-card .desc { font-size: 12.5px; color: var(--text); margin-top: 10px; line-height: 1.5; }
+
+    .metric-row { display: flex; gap: 16px; margin-bottom: 28px; flex-wrap: wrap; }
+    .metric { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; flex: 1; min-width: 130px; }
+    .metric .val { font-size: 26px; font-weight: 800; }
+    .metric .lbl { font-size: 11px; color: var(--muted); margin-top: 3px; }
+
+    /* ── Table ── */
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+    thead th {
+      text-align: left; padding: 8px 14px;
+      color: var(--muted); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .5px;
+      border-bottom: 1px solid var(--border);
+    }
+    tbody tr { border-bottom: 1px solid var(--border); transition: background .1s; }
+    tbody tr:last-child { border-bottom: none; }
+    tbody tr:hover { background: rgba(255,255,255,.025); }
+    tbody td { padding: 10px 14px; }
+    .rank { color: var(--muted); font-size: 12px; width: 32px; }
+    .score-pill {
+      display: inline-block;
+      background: rgba(245,78,0,.18); color: var(--accent);
+      border-radius: 6px; padding: 2px 9px; font-weight: 700; font-size: 12.5px;
+    }
+    .bar-wrap { width: 100px; height: 6px; background: var(--border); border-radius: 3px; margin-top: 3px; }
+    .bar-fill  { height: 100%; background: var(--accent); border-radius: 3px; }
+    .avatar { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border); vertical-align: middle; margin-right: 8px; }
+
+    /* ── Graph ── */
+    #graph-container { width: 100%; height: 560px; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; position: relative; background: var(--surface); }
+    #graph-container svg { width: 100%; height: 100%; }
+    .graph-tooltip {
+      position: absolute; pointer-events: none;
+      background: #0e0c14; border: 1px solid var(--border);
+      border-radius: 8px; padding: 8px 12px; font-size: 12px;
+      opacity: 0; transition: opacity .15s;
+    }
+
+    /* ── Charts ── */
+    .chart-wrap { height: 340px; position: relative; }
+
+    /* ── Scrollbar ── */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+  </style>
+</head>
+<body>
+
+<!-- ══ SIDEBAR ══════════════════════════════════════════════════════════ -->
+<aside id="sidebar">
+  <div class="logo">
+    <!-- PostHog hedgehog icon (simplified SVG) -->
+    <svg width="30" height="30" viewBox="0 0 32 32" fill="none">
+      <circle cx="16" cy="16" r="16" fill="#f54e00"/>
+      <ellipse cx="16" cy="19" rx="8" ry="6" fill="#fff" opacity=".9"/>
+      <circle cx="13" cy="15" r="1.5" fill="#f54e00"/>
+      <circle cx="19" cy="15" r="1.5" fill="#f54e00"/>
+      <ellipse cx="16" cy="22" rx="3" ry="1.5" fill="#f54e00" opacity=".5"/>
+    </svg>
+    <div>
+      <div class="sub">PostHog · posthog</div>
+      <span>Review Influence</span>
+    </div>
+  </div>
+
+  <nav>
+    <button class="active" data-tab="overview">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+      Overview
+    </button>
+    <button data-tab="leaderboard">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 6l4-4 4 4"/><path d="M12 2v10"/><rect x="2" y="14" width="20" height="8" rx="2"/></svg>
+      Reviewer Leaderboard
+    </button>
+    <button data-tab="network">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="5" r="3"/><circle cx="5" cy="19" r="3"/><circle cx="19" cy="19" r="3"/><path d="M12 8l-5 8M12 8l5 8M5 19h14"/></svg>
+      Review Network
+    </button>
+    <button data-tab="trends">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      Influence Trend
+    </button>
+    <button data-tab="coverage">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+      Subsystem Coverage
+    </button>
+  </nav>
+
+  <div class="meta" id="sidebar-meta">
+    Loading…
+  </div>
+</aside>
+
+<!-- ══ MAIN ═════════════════════════════════════════════════════════════ -->
+<main id="main">
+
+  <!-- OVERVIEW -->
+  <section id="sec-overview" class="section active">
+    <h2>Review Influence Score</h2>
+    <p class="subtitle">Measuring engineering leverage through high-quality code review — not lines written.</p>
+
+    <div class="metric-row" id="overview-metrics"></div>
+
+    <div class="card" style="margin-bottom:24px">
+      <p style="font-size:14px;line-height:1.8;color:#c9c3da">
+        The <strong style="color:var(--accent)">Review Influence Score</strong> captures the leverage an engineer creates
+        when they review code. A pull request merged after a substantive review — especially one in a critical subsystem
+        that prompted the author to change their code — represents <em>compounded impact</em>: the reviewer's knowledge
+        multiplied across every user who benefits from that fix or feature.
+      </p>
+    </div>
+
+    <div class="signals-grid">
+      <div class="signal-card">
+        <div class="num">①</div>
+        <div class="label">PR Complexity</div>
+        <div class="desc">Scores 1–5 based on files changed and total line delta. Bigger, riskier PRs earn higher multipliers.</div>
+      </div>
+      <div class="signal-card">
+        <div class="num">②</div>
+        <div class="label">Subsystem Criticality</div>
+        <div class="desc">Core paths like <code>/hogql</code>, <code>/plugin-server</code>, <code>/posthog/api</code> carry 2–3× weight multipliers.</div>
+      </div>
+      <div class="signal-card">
+        <div class="num">③</div>
+        <div class="label">Review Depth</div>
+        <div class="desc">Reviews &gt;30 words or "Request Changes" decisions signal substantive engagement, not rubber-stamping.</div>
+      </div>
+      <div class="signal-card">
+        <div class="num">④</div>
+        <div class="label">Reviewer Centrality</div>
+        <div class="desc">Engineers who review across many authors and subsystems act as knowledge bridges for the whole team.</div>
+      </div>
+      <div class="signal-card">
+        <div class="num">⑤</div>
+        <div class="label">Acceptance Weight</div>
+        <div class="desc">A 1.5× multiplier when the author commits new code after the review — proof the feedback had a real effect.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEADERBOARD -->
+  <section id="sec-leaderboard" class="section">
+    <h2>Reviewer Leaderboard</h2>
+    <p class="subtitle">Top engineers ranked by cumulative Review Influence Score (last 90 days).</p>
+    <div class="card">
+      <div class="table-wrap">
+        <table id="leaderboard-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Engineer</th>
+              <th>Score</th>
+              <th>PRs Reviewed</th>
+              <th>Authors</th>
+              <th>Subsystems</th>
+            </tr>
+          </thead>
+          <tbody id="leaderboard-body"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- NETWORK -->
+  <section id="sec-network" class="section">
+    <h2>Review Network Graph</h2>
+    <p class="subtitle">Force-directed graph of who reviews whom. Node size = influence score. Edge thickness = review frequency.</p>
+    <div id="graph-container">
+      <svg id="graph-svg"></svg>
+      <div class="graph-tooltip" id="graph-tooltip"></div>
+    </div>
+    <p style="font-size:12px;color:var(--muted);margin-top:10px">Drag nodes to explore. Hover for details. Orange nodes are top reviewers.</p>
+  </section>
+
+  <!-- TRENDS -->
+  <section id="sec-trends" class="section">
+    <h2>Influence Trend</h2>
+    <p class="subtitle">Total Review Influence Points accumulated per week over the last 90 days.</p>
+    <div class="card">
+      <div class="chart-wrap">
+        <canvas id="trend-chart"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <!-- COVERAGE -->
+  <section id="sec-coverage" class="section">
+    <h2>Subsystem Coverage</h2>
+    <p class="subtitle">Review density by codebase area — shows where review attention is concentrated or thin.</p>
+    <div class="card">
+      <div class="chart-wrap">
+        <canvas id="coverage-chart"></canvas>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ══ SCRIPT ════════════════════════════════════════════════════════════ -->
+<script>
+// ── Tab navigation ────────────────────────────────────────────────────
+const tabs = {
+  overview:    document.getElementById('sec-overview'),
+  leaderboard: document.getElementById('sec-leaderboard'),
+  network:     document.getElementById('sec-network'),
+  trends:      document.getElementById('sec-trends'),
+  coverage:    document.getElementById('sec-coverage'),
+};
+let activeTab = 'overview';
+let networkBuilt = false, trendBuilt = false, coverageBuilt = false;
+
+document.querySelectorAll('nav button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    Object.values(tabs).forEach(s => s.classList.remove('active'));
+    const tab = btn.dataset.tab;
+    tabs[tab].classList.add('active');
+    activeTab = tab;
+    if (tab === 'network'  && !networkBuilt)  buildGraph(window._data);
+    if (tab === 'trends'   && !trendBuilt)    buildTrend(window._data);
+    if (tab === 'coverage' && !coverageBuilt) buildCoverage(window._data);
+  });
+});
+
+// ── Fetch data ────────────────────────────────────────────────────────
+fetch('/api/data')
+  .then(r => r.json())
+  .then(data => {
+    window._data = data;
+    populateSidebar(data);
+    populateOverviewMetrics(data);
+    populateLeaderboard(data);
+    if (activeTab === 'network')  buildGraph(data);
+    if (activeTab === 'trends')   buildTrend(data);
+    if (activeTab === 'coverage') buildCoverage(data);
+  });
+
+// ── Sidebar meta ──────────────────────────────────────────────────────
+function populateSidebar(d) {
+  const el = document.getElementById('sidebar-meta');
+  const gen = d.generated_at ? new Date(d.generated_at).toLocaleDateString() : '—';
+  el.innerHTML = `Repo: <strong style="color:var(--text)">${d.repo}</strong><br>
+    Window: last ${d.days_back} days<br>
+    Generated: ${gen}`;
+}
+
+// ── Overview metrics ──────────────────────────────────────────────────
+function populateOverviewMetrics(d) {
+  const wrap = document.getElementById('overview-metrics');
+  const totalScore = d.leaderboard.reduce((s, e) => s + e.score, 0);
+  const metrics = [
+    { val: d.leaderboard.length, lbl: 'Active Reviewers' },
+    { val: d.graph.links.length, lbl: 'Review Connections' },
+    { val: Math.round(totalScore).toLocaleString(), lbl: 'Total Influence Points' },
+    { val: d.trends.length + ' wks', lbl: 'Time Coverage' },
+  ];
+  wrap.innerHTML = metrics.map(m => `
+    <div class="metric">
+      <div class="val">${m.val}</div>
+      <div class="lbl">${m.lbl}</div>
+    </div>`).join('');
+}
+
+// ── Leaderboard ───────────────────────────────────────────────────────
+function populateLeaderboard(d) {
+  const maxScore = d.leaderboard[0]?.score || 1;
+  const tbody = document.getElementById('leaderboard-body');
+  tbody.innerHTML = d.leaderboard.map((eng, i) => `
+    <tr>
+      <td class="rank">${i + 1}</td>
+      <td>
+        <img class="avatar" src="${eng.avatar_url}" onerror="this.style.display='none'" />
+        <a href="https://github.com/${eng.login}" target="_blank"
+           style="color:var(--text);text-decoration:none;font-weight:600">${eng.login}</a>
+      </td>
+      <td>
+        <span class="score-pill">${eng.score.toLocaleString()}</span>
+        <div class="bar-wrap"><div class="bar-fill" style="width:${(eng.score/maxScore*100).toFixed(1)}%"></div></div>
+      </td>
+      <td>${eng.prs_reviewed}</td>
+      <td>${eng.authors_reviewed}</td>
+      <td>${eng.subsystems}</td>
+    </tr>`).join('');
+}
+
+// ── Network Graph (D3) ────────────────────────────────────────────────
+function buildGraph(d) {
+  networkBuilt = true;
+  const container = document.getElementById('graph-container');
+  const svg = d3.select('#graph-svg');
+  const W = container.clientWidth, H = container.clientHeight;
+  svg.attr('viewBox', `0 0 ${W} ${H}`);
+
+  const scoreMap = {};
+  d.leaderboard.forEach(e => scoreMap[e.login] = e.score);
+  const maxScore = d.leaderboard[0]?.score || 1;
+
+  // Limit to top-100 nodes for readability
+  const topReviewers = new Set(d.leaderboard.slice(0, 30).map(e => e.login));
+  const filteredLinks = d.graph.links.filter(l =>
+    topReviewers.has(l.source) || topReviewers.has(l.target)
+  ).slice(0, 200);
+  const nodeIds = new Set();
+  filteredLinks.forEach(l => { nodeIds.add(l.source); nodeIds.add(l.target); });
+  const nodes = [...nodeIds].map(id => ({ id, score: scoreMap[id] || 0 }));
+  const links = filteredLinks.map(l => ({ ...l }));
+
+  const color = d3.scaleSequential([0, maxScore], d3.interpolateOranges);
+  const rScale = d3.scaleSqrt([0, maxScore], [4, 18]);
+
+  // Arrow marker
+  svg.append('defs').append('marker')
+    .attr('id', 'arrow').attr('viewBox', '0 -4 8 8')
+    .attr('refX', 18).attr('markerWidth', 6).attr('markerHeight', 6)
+    .attr('orient', 'auto')
+    .append('path').attr('d', 'M0,-4L8,0L0,4').attr('fill', '#7c3aed').attr('opacity', .5);
+
+  const sim = d3.forceSimulation(nodes)
+    .force('link', d3.forceLink(links).id(d => d.id).distance(80).strength(.4))
+    .force('charge', d3.forceManyBody().strength(-180))
+    .force('center', d3.forceCenter(W / 2, H / 2))
+    .force('collide', d3.forceCollide(d => rScale(d.score) + 4));
+
+  const linkEl = svg.append('g').selectAll('line').data(links).enter().append('line')
+    .attr('stroke', '#7c3aed').attr('stroke-opacity', .35)
+    .attr('stroke-width', d => Math.sqrt(d.value))
+    .attr('marker-end', 'url(#arrow)');
+
+  const nodeEl = svg.append('g').selectAll('circle').data(nodes).enter().append('circle')
+    .attr('r', d => rScale(d.score))
+    .attr('fill', d => topReviewers.has(d.id) ? color(d.score) : '#3a3554')
+    .attr('stroke', d => topReviewers.has(d.id) ? '#f54e00' : '#4a4466')
+    .attr('stroke-width', 1.5)
+    .style('cursor', 'pointer')
+    .call(d3.drag()
+      .on('start', (event, d) => { if (!event.active) sim.alphaTarget(.3).restart(); d.fx = d.x; d.fy = d.y; })
+      .on('drag',  (event, d) => { d.fx = event.x; d.fy = event.y; })
+      .on('end',   (event, d) => { if (!event.active) sim.alphaTarget(0); d.fx = null; d.fy = null; }));
+
+  const tooltip = document.getElementById('graph-tooltip');
+  nodeEl.on('mouseover', (event, d) => {
+    tooltip.style.opacity = '1';
+    tooltip.innerHTML = `<strong>${d.id}</strong><br>Score: ${d.score.toLocaleString()}`;
+  }).on('mousemove', event => {
+    const rect = container.getBoundingClientRect();
+    tooltip.style.left = (event.clientX - rect.left + 12) + 'px';
+    tooltip.style.top  = (event.clientY - rect.top  + 12) + 'px';
+  }).on('mouseout', () => { tooltip.style.opacity = '0'; });
+
+  const labelEl = svg.append('g').selectAll('text').data(nodes.filter(n => topReviewers.has(n.id))).enter()
+    .append('text').text(d => d.id).attr('font-size', 10).attr('fill', '#c9c3da').attr('dy', -10).attr('text-anchor', 'middle');
+
+  sim.on('tick', () => {
+    linkEl.attr('x1', d => d.source.x).attr('y1', d => d.source.y)
+          .attr('x2', d => d.target.x).attr('y2', d => d.target.y);
+    nodeEl.attr('cx', d => d.x).attr('cy', d => d.y);
+    labelEl.attr('x', d => d.x).attr('y', d => d.y);
+  });
+}
+
+// ── Trend Chart (Chart.js) ────────────────────────────────────────────
+function buildTrend(d) {
+  trendBuilt = true;
+  const ctx = document.getElementById('trend-chart').getContext('2d');
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: d.trends.map(t => t.week),
+      datasets: [{
+        label: 'Influence Points',
+        data: d.trends.map(t => t.points),
+        borderColor: '#f54e00',
+        backgroundColor: 'rgba(245,78,0,.12)',
+        pointBackgroundColor: '#f54e00',
+        pointRadius: 4,
+        tension: .35,
+        fill: true,
+      }],
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { labels: { color: '#e5e0f0', font: { size: 12 } } } },
+      scales: {
+        x: { ticks: { color: '#7b7391', font: { size: 11 } }, grid: { color: '#2e2a3b' } },
+        y: { ticks: { color: '#7b7391', font: { size: 11 } }, grid: { color: '#2e2a3b' } },
+      },
+    },
+  });
+}
+
+// ── Coverage Chart (Chart.js) ─────────────────────────────────────────
+function buildCoverage(d) {
+  coverageBuilt = true;
+  const ctx = document.getElementById('coverage-chart').getContext('2d');
+  const palette = ['#f54e00','#7c3aed','#06b6d4','#10b981','#f59e0b','#ec4899','#6366f1','#84cc16'];
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: d.coverage.map(c => c.subsystem),
+      datasets: [{
+        label: 'Reviews',
+        data: d.coverage.map(c => c.reviews),
+        backgroundColor: d.coverage.map((_, i) => palette[i % palette.length] + 'cc'),
+        borderColor:     d.coverage.map((_, i) => palette[i % palette.length]),
+        borderWidth: 1,
+        borderRadius: 6,
+      }],
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { labels: { color: '#e5e0f0', font: { size: 12 } } } },
+      scales: {
+        x: { ticks: { color: '#7b7391', font: { size: 11 } }, grid: { color: '#2e2a3b' } },
+        y: { ticks: { color: '#7b7391', font: { size: 11 } }, grid: { color: '#2e2a3b' } },
+      },
+    },
+  });
+}
+</script>
+</body>
+</html>
